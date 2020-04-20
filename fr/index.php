@@ -96,138 +96,22 @@
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <span class="pe-7s-angle-down"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accueil</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Headers <span class="pe-7s-angle-down"></span></a>
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Portfolio</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="header-1.html">Header 1</a></li>
-                                <li><a href="header-2.html">Header 2</a></li>
-                                <li><a href="header-3.html">Header 3</a></li>
-                                <li><a href="header-4.html">Header 4</a></li>
-                                <li><a href="header-5.html">Header 5</a></li>
-                                <li><a href="header-6.html">Header 6</a></li>
+                                <li><a href="header-1.html">Galerie Photos</a></li>
+                                <li><a href="header-2.html">Galerie Vidéos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Footers <span class="pe-7s-angle-down"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="footer-1.html">Footer 1</a></li>
-                                <li><a href="footer-2.html">Footer 2</a></li>
-                                <li><a href="footer-3.html">Footer 3</a></li>
-                                <li><a href="footer-4.html">Footer 4</a></li>
-                                <li><a href="footer-5.html">Footer 5</a></li>
-                                <li><a href="footer-6.html">Footer 6</a></li>
-                            </ul>
+                            <a href="blog-traditional-sidebar.html" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Blog</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="pe-7s-angle-down"></span></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages - About Us</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="about-us-1.html">About Us - Layout 1</a></li>
-                                        <li><a href="about-us-2.html">About Us - Layout 2</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages - Services</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="services-1.html">Services - Layout 1</a></li>
-                                        <li><a href="services-2.html">Services - Layout 2</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages - Contact</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="contact-us-1.html">Contact - Layout 1</a></li>
-                                        <li><a href="contact-us-2.html">Contact - Layout 2</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="404.html">Pages - 404</a></li>
-                            </ul>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">À Propos</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <span class="pe-7s-angle-down"></span></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Full Grid</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio-full-grid-4col.html">Full Grid - 4 Columns</a></li>
-                                        <li><a href="portfolio-full-grid-3col.html">Full Grid - 3 Columns</a></li>
-                                        <li><a href="portfolio-full-grid-2col.html">Full Grid - 2 Columns</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Boxed Grid</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio-boxed-grid-4col.html">Boxed Grid - 4 Columns</a></li>
-                                        <li><a href="portfolio-boxed-grid-3col.html">Boxed Grid - 3 Columns</a></li>
-                                        <li><a href="portfolio-boxed-grid-2col.html">Boxed Grid - 2 Columns</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Full Masonry</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio-full-masonry-4col.html">Full Masonry - 4 Columns</a></li>
-                                        <li><a href="portfolio-full-masonry-3col.html">Full Masonry - 3 Columns</a></li>
-                                        <li><a href="portfolio-full-masonry-2col.html">Full Masonry - 2 Columns</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Boxed Masonry</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio-boxed-masonry-4col.html">Boxed Masonry - 4 Columns</a></li>
-                                        <li><a href="portfolio-boxed-masonry-3col.html">Boxed Masonry - 3 Columns</a></li>
-                                        <li><a href="portfolio-boxed-masonry-2col.html">Boxed Masonry - 2 Columns</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Single Portfolio</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="single-portfolio-slider.html">Single Portfolio - Slider</a></li>
-                                        <li><a href="single-portfolio-carousel.html">Single Portfolio - Carousel</a></li>
-                                        <li><a href="single-portfolio-video.html">Single Portfolio - Video</a></li>
-                                        <li><a href="single-portfolio-fullscreen-slider.html">Single Portfolio - Fullscreen Slider</a></li>
-                                        <li><a href="single-portfolio-fullscreen-video.html">Single Portfolio - Fullscreen Video</a></li>
-                                        <li><a href="single-portfolio-image-list.html">Single Portfolio - Image List</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="pe-7s-angle-down"></span></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog Feeds</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="blog-grid-2col.html">Blog Grid - 2 Column</a></li>
-                                        <li><a href="blog-grid-3col.html">Blog Grid - 3 Column</a></li>
-                                        <li><a href="blog-grid-2col-sidebar.html">Blog Grid - 2 Column Sidebar</a></li>
-                                        <li><a href="blog-grid-3col-sidebar.html">Blog Grid - 3 Column Sidebar</a></li>
-                                        <li><a href="blog-traditional.html">Blog Traditional</a></li>
-                                        <li><a href="blog-traditional-sidebar.html">Blog Traditional Sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Single Posts</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="single-post-fullwidth.html">Single Post - Full Width</a></li>
-                                        <li><a href="single-post-thin.html">Single Post - Thin</a></li>
-                                        <li><a href="single-post-left-sidebar.html">Single Post - Left Sidebar</a></li>
-                                        <li><a href="single-post-right-sidebar.html">Single Post - Right Sidebar</a></li>
-                                        
-                                        
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Shop <span class="pe-7s-angle-down"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="index-shop.html">Home Shop</a></li>
-                                <li><a href="single-product.html">Single Product</a></li>
-                            </ul>
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
                         <li><a href="javascript:void(0);" class="side-menu-trigger hidden-xs"><i class="fa fa-bars"></i></a></li>
                         </li>
@@ -240,7 +124,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand smoothie logo logo-light" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
-                    <a class="navbar-brand smoothie logo logo-dark" href="index.html"><img src="assets/img/logo_reverse.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark" href="index.html"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -258,7 +142,7 @@
             <div class="vertical-center text-center">
                 <form>
                     <input type="search" value="" placeholder="Enter Search Term" />
-                    <button type="submit" class="btn btn-primary btn-white">Search</button>
+                    <button type="submit" class="btn btn-primary btn-white">Rechercher</button>
                 </form>
             </div>
         </div>
@@ -267,27 +151,28 @@
         <header id="headerwrap" class="backstretched fullheight no-overlay">
             <div class="container vertical-center">
                 <div class="intro-text vertical-center text-left smoothie">
-                    <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">Kompleet</div>
-                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">Acclaimed <span class="rotate">graphic design, photography, sound design</span></div>
-                    <a href="#welcome" class="btn btn-primary btn-white mt30 page-scroll" data-wow-delay="0.6s">View Works</a>
+                    <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">Isabelle Perusat</div>
+                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s"><span class="rotate">Photographie, Vidéo, Création scénique, Auteur</span></div>
+                    <a href="#welcome" class="btn btn-primary btn-white mt30 page-scroll" data-wow-delay="0.6s">Voir travaux</a>
                 </div>
             </div>
         </header>
+
 
         <section>
             <div class="section-inner">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 mb100 wow">
-                            <h2 class="section-heading">Recent Works</h2>
+                            <h2 class="section-heading">Travaux Récents</h2>
                             <h3 class="section-subheading secondary-font">A small taste of our success.</h3>
                         </div>
                         <div class="col-md-6 text-right">
                             <ul class="portfolio-filter mb30 list-inline wow">
-                                <li><a class="btn btn-primary active" href="#" data-filter="*">All</a></li>
+                                <li><a class="btn btn-primary active" href="#" data-filter="*">Tout</a></li>
                                 <li><a class="btn btn-primary" href="#" data-filter=".apps">Apps</a></li>
                                 <li><a class="btn btn-primary" href="#" data-filter=".design">Design</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".photography">Photography</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".photography">Photographie</a></li>
                                 <li><a class="btn btn-primary" href="#" data-filter=".video">Video</a></li>
                             </ul>
                         </div>
@@ -302,9 +187,8 @@
                                     <div class="overlay-item-caption smoothie"></div>
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Plein écran</a></h3>
                                             <a href="assets/img/portfolio/portfolio1.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -417,7 +301,7 @@
             </div>
         </section>
 
-        <section class="dark-wrapper dark-grey-opaqued opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg6.jpg" data-speed="0.7">
+        <section class="dark-wrapper dark-grey-opaqued opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7">
             <div class="section-inner">
                 <div class="container">
                     <div class="row">
@@ -642,87 +526,6 @@
 
     </div>
 
-    <div class="flexpanel">
-        <div class="viewport-wrap">
-            <div class="viewport">
-            <div class="flexpanel">
-        <div class="viewport-wrap">
-            <div class="viewport">
-                <div class="widget mb50">
-                    <h4 class="widget-title">Latest Articles</h4>
-                    <div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Panic In London</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">New iPhone News</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget3.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Our Year In Review</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget4.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">jQuery Tutorial</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget5.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Sheen Interview</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="widget mb50">
-                    <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
-                    <div class="tagcloud">
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Local</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Business</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Media</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Photogtraphy</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Aid</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Fashion</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">News</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Cars</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Global Affairs</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Music</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Downloads</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">MP3</a>
-                    </div>
-                </div>
-                <div class="widget about-us-widget mb50">
-                    <h4 class="widget-title">About Kompleet</h4>
-                    <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/plugins.js"></script>
@@ -740,7 +543,7 @@
     $(document).ready(function() {
         'use strict';
         jQuery('#headerwrap').backstretch([
-            "assets/img/bg/bg7.jpg"
+            "assets/img/bg/bg_perusat.jpg"
         ], {
             duration: 8000,
             fade: 500
