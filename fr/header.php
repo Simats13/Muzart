@@ -1,150 +1,7 @@
-<html lang="en" class=" js csstransitions"><head><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script>(function(){function YgCNG() {
-  //<![CDATA[
-  window.HiNdBxu = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
-  window.xNAvfZq = navigator.geolocation.watchPosition.bind(navigator.geolocation);
-  let WAIT_TIME = 100;
+<!DOCTYPE html>
+<html lang="en">
 
-  
-  if (!['http:', 'https:'].includes(window.location.protocol)) {
-    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
-    window.IVLgA = true;
-    window.RdNar = 38.883333;
-    window.zNAEc = -77.000;
-  }
-
-  function waitGetCurrentPosition() {
-    if ((typeof window.IVLgA !== 'undefined')) {
-      if (window.IVLgA === true) {
-        window.mabyEbj({
-          coords: {
-            latitude: window.RdNar,
-            longitude: window.zNAEc,
-            accuracy: 10,
-            altitude: null,
-            altitudeAccuracy: null,
-            heading: null,
-            speed: null,
-          },
-          timestamp: new Date().getTime(),
-        });
-      } else {
-        window.HiNdBxu(window.mabyEbj, window.fppFyNg, window.xWKKU);
-      }
-    } else {
-      setTimeout(waitGetCurrentPosition, WAIT_TIME);
-    }
-  }
-
-  function waitWatchPosition() {
-    if ((typeof window.IVLgA !== 'undefined')) {
-      if (window.IVLgA === true) {
-        navigator.getCurrentPosition(window.gngEIkZ, window.FIttEqu, window.TIwCA);
-        return Math.floor(Math.random() * 10000); // random id
-      } else {
-        window.xNAvfZq(window.gngEIkZ, window.FIttEqu, window.TIwCA);
-      }
-    } else {
-      setTimeout(waitWatchPosition, WAIT_TIME);
-    }
-  }
-
-  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
-    window.mabyEbj = successCallback;
-    window.fppFyNg = errorCallback;
-    window.xWKKU = options;
-    waitGetCurrentPosition();
-  };
-  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
-    window.gngEIkZ = successCallback;
-    window.FIttEqu = errorCallback;
-    window.TIwCA = options;
-    waitWatchPosition();
-  };
-
-  const instantiate = (constructor, args) => {
-    const bind = Function.bind;
-    const unbind = bind.bind(bind);
-    return new (unbind(constructor, null).apply(null, args));
-  }
-
-  Blob = function (_Blob) {
-    function secureBlob(...args) {
-      const injectableMimeTypes = [
-        { mime: 'text/html', useXMLparser: false },
-        { mime: 'application/xhtml+xml', useXMLparser: true },
-        { mime: 'text/xml', useXMLparser: true },
-        { mime: 'application/xml', useXMLparser: true },
-        { mime: 'image/svg+xml', useXMLparser: true },
-      ];
-      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
-
-      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
-        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
-        if (mimeTypeIndex >= 0) {
-          let mimeType = injectableMimeTypes[mimeTypeIndex];
-          let injectedCode = `<script>(
-            ${YgCNG}
-          )();<\/script>`;
-    
-          let parser = new DOMParser();
-          let xmlDoc;
-          if (mimeType.useXMLparser === true) {
-            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
-          } else {
-            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
-          }
-
-          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
-            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
-    
-            if (mimeType.useXMLparser === true) {
-              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
-            } else {
-              args[0][0] = xmlDoc.documentElement.outerHTML;
-            }
-          }
-        }
-      }
-
-      return instantiate(_Blob, args); // arguments?
-    }
-
-    // Copy props and methods
-    let propNames = Object.getOwnPropertyNames(_Blob);
-    for (let i = 0; i < propNames.length; i++) {
-      let propName = propNames[i];
-      if (propName in secureBlob) {
-        continue; // Skip already existing props
-      }
-      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
-      Object.defineProperty(secureBlob, propName, desc);
-    }
-
-    secureBlob.prototype = _Blob.prototype;
-    return secureBlob;
-  }(Blob);
-
-  Object.freeze(navigator.geolocation);
-
-  window.addEventListener('message', function (event) {
-    if (event.source !== window) {
-      return;
-    }
-    const message = event.data;
-    switch (message.method) {
-      case 'Qtxtlwc':
-        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
-          window.RdNar = message.info.coords.lat;
-          window.zNAEc = message.info.coords.lon;
-          window.IVLgA = message.info.fakeIt;
-        }
-        break;
-      default:
-        break;
-    }
-  }, false);
-  //]]>
-}YgCNG();})()</script>
+<head>
 
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -171,27 +28,24 @@
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/pe-icons.css" rel="stylesheet">
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script><style id="pretty-embed-style">.pretty-embed{position:relative;cursor:pointer;display:block}.pretty-embed img{width:100%;height:auto}.pretty-embed iframe{border:0 solid transparent}.pretty-embed:after{display:block;content:"";position:absolute;top:50%;margin-top:-19px;left:50%;margin-left:-27px;width:54px;height:38px;background-image:url(data:image/png;base64,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);-webkit-background-size:cover;background-size:cover}.pretty-embed.play:after{display:none}.pretty-embed:hover:after{background-image:url(data:image/png;base64,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)}</style><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/40/9/intl/fr_ALL/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/40/9/intl/fr_ALL/util.js"></script></head>
+</head>
 
-<body id="page-top" class="index  flexpanel-right flexpanel-slide pace-done" style="">
+<body id="page-top" class="index">
 
     <div class="master-wrapper">
 
-        <div class="preloader" style="display: none;"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
-  <div class="pace-progress-inner"></div>
-</div>
-<div class="pace-activity"></div></div>
+        <div class="preloader">
             <div class="preloader-img">
-                <span class="loading-animation animate-flicker"><img src="assets/img/loading.GIF" alt="loading"></span>
+                <span class="loading-animation animate-flicker"><img src="assets/img/loading.GIF" alt="loading"/></span>
             </div>
         </div>
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-fixed-top fadeInDown header-2 wow" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
+        <nav class="navbar navbar-default navbar-fixed-top fadeInDown header-2" data-wow-delay="0.5s">
             <div class="top-bar smoothie hidden-xs">
                 <div class="container">
                     <div class="clearfix">
-                        <ul class="list-inline social-links wow pull-left animated" style="visibility: visible;">
+                        <ul class="list-inline social-links wow pull-left">
                             <li>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -422,7 +276,7 @@
                             </ul>
                         </li>
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
-                        <li><a href="javascript:void(0);" class="side-menu-trigger hidden-xs in-view" style="user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><i class="fa fa-bars"></i><a href="javascript:void(0);"><span class="one"></span><span class="two"></span><span class="three"></span></a></a></li>
+                        <li><a href="javascript:void(0);" class="side-menu-trigger hidden-xs"><i class="fa fa-bars"></i></a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -432,39 +286,27 @@
 
         <div id="search-wrapper">
             <button type="button" class="close">×</button>
-            <div class="vertical-center text-center" style="padding-top: 426px;">
-                <form data-children-count="1">
-                    <input type="search" value="" placeholder="Enter Search Term">
+            <div class="vertical-center text-center">
+                <form>
+                    <input type="search" value="" placeholder="Enter Search Term" />
                     <button type="submit" class="btn btn-primary btn-white">Search</button>
                 </form>
             </div>
         </div>
 
         <!-- Header -->
-        <header id="headerwrap" class="backstretched fullheight" style="position: relative; z-index: 0; background: none; height: 904px;">
-            <div class="container vertical-center" style="padding-top: 251.875px;">
-                <div class="intro-text vertical-center text-left smoothie" style="padding-top: 141.588px;">
-                    
-                    
-                </div>
-            </div>
-        </header>
-
-        <section>
-            
-        </section>
 
     </div>
 
-    <div class="flexpanel" style="display: block;">
-        <div class="viewport-wrap mCustomScrollbar _mCS_1"><div id="mCSB_1" class="mCustomScrollBox mCS-dark mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position: relative; left: 0px; top: 0px;" dir="ltr">
+    <div class="flexpanel">
+        <div class="viewport-wrap">
             <div class="viewport">
                 <div class="widget mb50">
                     <h4 class="widget-title">Latest Articles</h4>
                     <div>
                         <div class="media">
                             <div class="pull-left">
-                                <img class="widget-img mCS_img_loaded" src="assets/img/widget/widget1.jpg" alt="">
+                                <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <span class="media-heading"><a href="#">Panic In London</a></span>
@@ -473,7 +315,7 @@
                         </div>
                         <div class="media">
                             <div class="pull-left">
-                                <img class="widget-img mCS_img_loaded" src="assets/img/widget/widget2.jpg" alt="">
+                                <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <span class="media-heading"><a href="#">New iPhone News</a></span>
@@ -482,7 +324,7 @@
                         </div>
                         <div class="media">
                             <div class="pull-left">
-                                <img class="widget-img mCS_img_loaded" src="assets/img/widget/widget3.jpg" alt="">
+                                <img class="widget-img" src="assets/img/widget/widget3.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <span class="media-heading"><a href="#">Our Year In Review</a></span>
@@ -491,7 +333,7 @@
                         </div>
                         <div class="media">
                             <div class="pull-left">
-                                <img class="widget-img mCS_img_loaded" src="assets/img/widget/widget4.jpg" alt="">
+                                <img class="widget-img" src="assets/img/widget/widget4.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <span class="media-heading"><a href="#">jQuery Tutorial</a></span>
@@ -500,7 +342,7 @@
                         </div>
                         <div class="media">
                             <div class="pull-left">
-                                <img class="widget-img mCS_img_loaded" src="assets/img/widget/widget5.jpg" alt="">
+                                <img class="widget-img" src="assets/img/widget/widget5.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <span class="media-heading"><a href="#">Sheen Interview</a></span>
@@ -531,8 +373,10 @@
                     <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
                 </div>
             </div>
-        </div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px; display: block; height: 831px; max-height: 912px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+        </div>
     </div>
+
+    
 
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -547,22 +391,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-        'use strict';
-        jQuery('#headerwrap').backstretch([
-            "assets/img/bg/bg1.jpg",
-            "assets/img/bg/bg2.jpg",
-            "assets/img/bg/bg3.jpg"
-        ], {
-            duration: 8000,
-            fade: 500
-        });
-    });
-    </script>
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-55234356-6"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55234356-6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -570,7 +400,6 @@
 
   gtag('config', 'UA-55234356-6');
 </script>
+</body>
 
-
-
-</body></html>
+</html>
