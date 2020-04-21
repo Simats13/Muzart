@@ -386,9 +386,9 @@
         </section>
 
         <!-- FOOTER-->
-        <?php include 'footer.php'?>
+        <?php include 'footer_fr.php'?>
         <!-- BARRE DE NAVIGATION -->
-        <?php include 'header.php'?>
+        <?php include 'header_fr.php'?>
 
  
 
