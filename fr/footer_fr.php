@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="col-md-12 text-center ptb">
-                            <span class="copyright">Copyright 2019. Designed by DISTINCTIVE THEMES</span>
+                            <span class="copyright">Copyright 2019. Designed by IN'TECH</span>
                         </div>
                     </div>
                 </div>

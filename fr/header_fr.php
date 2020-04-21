@@ -66,7 +66,7 @@
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accueil</a>
+                            <a href="index.php" class="dropdown-toggle" data-toggle="dropdown">Accueil</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Portfolio</a>
@@ -80,6 +80,9 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">À Propos</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
                         </li>
                         <li class="dropdown">
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
