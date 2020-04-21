@@ -111,7 +111,7 @@
             <button type="button" class="close">×</button>
             <div class="vertical-center text-center">
                 <form>
-                    <input type="search" value="" placeholder="Enter Search Term" />
+                    <input type="search" value="" placeholder="Rechercher un terme" />
                     <button type="submit" class="btn btn-primary btn-white">Rechercher</button>
                 </form>
             </div>
