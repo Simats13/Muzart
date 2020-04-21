@@ -1,15 +1,17 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
 
-<nav class="navbar navbar-default navbar-fixed-top fadeInDown header-2 data-wow-delay="0.5s">
+<head>
+    <meta charset="utf-8">
+    <title>Pérusat Création - Header</title>
+
+
+</head>
+
+<body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top fadeInDown header-2 data-wow-delay="0.5s">
             <div class="top-bar smoothie hidden-xs">
                 <div class="container">
                     <div class="clearfix">
@@ -115,19 +117,6 @@
             </div>
         </div>
 
-        <!-- Header -->
-        <header id="headerwrap" class="backstretched fullheight no-overlay">
-            <div class="container vertical-center">
-                <div class="intro-text vertical-center text-left smoothie">
-                    <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">Isabelle Perusat</div>
-                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s"><span class="rotate">Photographie, Vidéo, Création scénique, Auteur</span></div>
-                    <a href="#welcome" class="btn btn-primary btn-white mt30 page-scroll" data-wow-delay="0.6s">Voir travaux</a>
-                </div>
-            </div>
-        </header>
-
-
-
         <div class="flexpanel">
         <div class="viewport-wrap">
             <div class="viewport">
@@ -207,29 +196,7 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="assets/js/init.js"></script>
+</body>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script type="text/javascript">
-    $(document).ready(function() {
-        'use strict';
-        jQuery('#headerwrap').backstretch([
-            "assets/img/bg/bg_perusat.jpg"
-        ], {
-            duration: 8000,
-            fade: 500
-        });
-    });
-    </script>
+</html>
