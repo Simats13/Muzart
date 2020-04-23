@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
         <div id="footer-wrapper" class="footer-image-bg">
             <section class="transparent-wrapper">
                 <div class="section-inner">

@@ -295,217 +295,18 @@
             </div>
         </div>
 
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg2.jpg" data-speed="0.7">
-            <div class="section-inner pad-top-200">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 mt30 wow text-center">
-                            <h2 class="section-heading">Contact Us</h2>
-                        </div>
+        <!-- Header -->
+        <header id="headerwrap" class="backstretched fullheight">
+            <div class="container vertical-center">
+                <div class="intro-text vertical-center text-left smoothie">
+                    <div class="text-center nopadding white wow" data-wow-delay="3.5s">
+                        <div id="countdown"></div>
                     </div>
+                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s"><span class="rotate">We are nearly ready, come back soon</span></div>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <section id="welcome">
-            <div class="section-inner nopaddingbottom">
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="lead">Sold old ten are quit lose deal his sent. You correct how sex several far distant believe journey parties. We shyness enquire uncivil affixed it carried to. </p>
-                            <p>End sitting shewing who saw besides son musical adapted. Contrasted interested eat alteration pianoforte sympathize was. He families believed if no elegance interest surprise an. It abode wrong miles an so delay plate.</p>
-                            <p class="mt30"><a href="#contact" class="btn btn-primary btn-theme page-scroll">Get In Touch</a></p>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div id="message"></div>
-                            <form method="post" action="sendemail.php" id="contactform" class="main-contact-form wow">
-                                <input type="text" class="form-control col-md-4" name="name" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name." />
-                                <input type="text" class="form-control col-md-4" name="email" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address." />
-                                <input type="text" class="form-control col-md-4" name="website" placeholder="Your URL *" id="website" required data-validation-required-message="Please enter your web address." />
-                                <textarea name="comments" class="form-control" id="comments" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
-                                <input class="btn btn-primary mt30 btn-white pull-right" type="submit" name="submit" value="Submit" />
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="dark-wrapper">
-            <div class="section-inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="widget about-us-widget">
-                                <h4 class="widget-title"><strong>Global</strong> Coverage</h4>
-                                <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="widget">
-                                <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
-                                <div>
-                                    <div class="media">
-                                        <div class="pull-left">
-                                            <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <span class="media-heading"><a href="#">Blog Post A</a></span>
-                                            <small class="muted">Posted 14 April 2015</small>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="pull-left">
-                                            <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <span class="media-heading"><a href="#">Blog Post B</a></span>
-                                            <small class="muted">Posted 14 April 2015</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="widget">
-                                <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
-                                <div class="tagcloud">
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Local</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Business</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Media</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Photogtraphy</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Aid</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Fashion</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">News</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Cars</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Global Affairs</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Music</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Downloads</a>
-                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">MP3</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="white-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <ul class="list-inline social-links wow">
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <hr class="thin-hr" />
-
-                    <div class="col-md-12 text-center wow">
-                        <span class="copyright">Copyright 2019. Designed by DISTINCTIVE THEMES</span>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-
-    <div class="flexpanel">
-        <div class="viewport-wrap">
-            <div class="viewport">
-                <div class="widget mb50">
-                    <h4 class="widget-title">Latest Articles</h4>
-                    <div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Panic In London</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">New iPhone News</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget3.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Our Year In Review</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget4.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">jQuery Tutorial</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget5.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Sheen Interview</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="widget mb50">
-                    <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
-                    <div class="tagcloud">
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Local</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Business</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Media</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Photogtraphy</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Aid</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Fashion</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">News</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Cars</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Global Affairs</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Music</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Downloads</a>
-                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">MP3</a>
-                    </div>
-                </div>
-                <div class="widget about-us-widget mb50">
-                    <h4 class="widget-title">About Kompleet</h4>
-                    <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="assets/js/jquery.js"></script>
@@ -520,6 +321,35 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        'use strict';
+        jQuery('#headerwrap').backstretch([
+            "assets/img/bg/bg1.jpg",
+            "assets/img/bg/bg2.jpg",
+            "assets/img/bg/bg3.jpg"
+        ], {
+            duration: 8000,
+            fade: 500
+        });
+        // set the date we're counting down to
+        var target_date = new Date('July, 31, 2020').getTime();
+        var days, hours, minutes, seconds;
+        var countdown = document.getElementById('countdown');
+        setInterval(function() {
+            var current_date = new Date().getTime();
+            var seconds_left = (target_date - current_date) / 1000;
+            days = parseInt(seconds_left / 86400);
+            seconds_left = seconds_left % 86400;
+            hours = parseInt(seconds_left / 3600);
+            seconds_left = seconds_left % 3600;
+            minutes = parseInt(seconds_left / 60);
+            seconds = parseInt(seconds_left % 60);
+            countdown.innerHTML = '<span class="days">' + days + ' <small>Days</small></span> <span class="hours">' + hours + ' <small>Hours</small></span> <span class="minutes">' + minutes + ' <small>Minutes</small></span> <span class="seconds">' + seconds + ' <small>Seconds</small></span>';
+        }, 1000);
+    });
+    </script>
 
 </body>
 

@@ -59,30 +59,30 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand smoothie logo" href="index.html"><img src="assets/img/logo_reverse.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo" href="index.php"><img src="assets/img/logo_reverse.png" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="index.php" class="dropdown-toggle" data-toggle="dropdown">Accueil</a>
+                        <li class="dropdown" role="menu">
+                            <a href="/Muzart/fr/index.php">Accueil</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Portfolio</a>
+                            <a href="/Muzart/fr/portofolio.php" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Portfolio</a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="header-1.html">Galerie Photos</a></li>
                                 <li><a href="header-2.html">Galerie Vidéos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="blog-traditional-sidebar.html" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Blog</a>
+                            <a href="blog.php">Blog</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">À Propos</a>
+                            <a href="/test.php">À Propos</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
+                            <a href="/Muzart/fr/contact_fr.php">Contact</a>
                         </li>
                         <li class="dropdown">
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
@@ -96,8 +96,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand smoothie logo logo-light" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
-                    <a class="navbar-brand smoothie logo logo-dark" href="index.html"></a>
+                    <a class="navbar-brand smoothie logo logo-light" href="index.php"><img src="assets/img/logo.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark" href="index.php"><img src="assets/img/logo_reverse.png" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

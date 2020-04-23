@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/ico/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" href="assets/img/ico/apple-touch-icon-57x57.png">
 
-    <title>Muzart</title>
+    <title>Pérusat Création - Contact</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
         <!-- Navigation -->
 
 
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="img/perusat.jpg" data-speed="0.7">
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7">
             <div class="section-inner pad-top-200">
                 <div class="container">
                     <div class="row">
