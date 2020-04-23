@@ -62,7 +62,7 @@
 
 
         <!--NAVIGATION -->
-        <?php include 'header_fr.php'?>
+        <?php include 'body/header_fr.php'?>
     </div>
 </body>
 

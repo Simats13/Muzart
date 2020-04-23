@@ -76,7 +76,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="blog.php">Blog</a>
+                            <a href="blog/index.php">Blog</a>
                         </li>
                         <li class="dropdown">
                             <a href="/test.php">À Propos</a>
