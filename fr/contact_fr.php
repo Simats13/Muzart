@@ -25,8 +25,8 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/css/pe-icons.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/pe-icons.css" rel="stylesheet">
 
 </head>
 
@@ -36,14 +36,14 @@
 
         <div class="preloader">
             <div class="preloader-img">
-                <span class="loading-animation animate-flicker"><img src="../assets/img/loading.GIF" alt="loading"/></span>
+                <span class="loading-animation animate-flicker"><img src="assets/img/loading.GIF" alt="loading"/></span>
             </div>
         </div>
 
         <!-- Navigation -->
 
 
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../assets/img/bg/bg_perusat.jpg" data-speed="0.7">
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7">
             <div class="section-inner pad-top-200">
                 <div class="container">
                     <div class="row">
@@ -81,12 +81,15 @@
             </div>
         </section>
 
+        <?php include 'footer_fr.php'?>
+        <?php include 'header_fr.php' ?>
 
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="../assets/js/init.js"></script>
+    <script src="assets/js/init.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

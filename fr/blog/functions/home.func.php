@@ -16,7 +16,7 @@ function get_posts(){
         ON posts.writter=admin.email
         WHERE posted='1'
         ORDER BY date DESC
-        LIMIT 0,3
+        LIMIT 0,2
     
     ");
 

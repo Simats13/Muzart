@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Pérusat Création - header</title>
-    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
     
 
 
@@ -78,7 +78,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#">Blog</a>
+                            <a href="../blog/index.php">Blog</a>
                         </li>
                         <li class="dropdown">
                             <a href="/test.php">À Propos</a>

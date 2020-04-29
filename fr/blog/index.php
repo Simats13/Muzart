@@ -54,37 +54,24 @@
   <link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="../assets/css/pe-icons.css" rel="stylesheet">
 
-  <!-- jQuery -->
-  <script src="../assets/js/jquery.js"></script>
+    <!-- jQuery -->
+    <script src="../assets/js/jquery.js"></script>
+
 </head>
 
 <body>
 
-  <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../assets/img/bg/bg2.jpg"
-    data-speed="0.7">
-    <div class="section-inner pad-top-200">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 mt30 wow text-center">
-            <h2 class="section-heading">Blog</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <?php
-                include 'pages/'.$page.'.php';
-            ?>
-  <?php include "body/header_fr.php";?>
 
-
-
-
-<div class="row paging text-center">
-                        <a class="btn btn-primary mt30" href="#">Older Posts</a>
-                    </div>
+  <?php include 'pages/'.$page.'.php';?>
   <?php include 'body/footer_fr.php'?>
   <?php include "body/header_fr.php";?>
+
+
+
+
+
+  <script type="text/javascript" src="js/script.js"></script>
+
 
 
 </body>
