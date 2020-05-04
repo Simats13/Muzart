@@ -55,6 +55,7 @@
     </thead>
     <tbody>
         <?php 
+        if(!empty($comments)){
             foreach($comments as $comment){
                 ?>
                     <tr id="commentaire_<?= $comment->id ?>">
@@ -94,7 +95,14 @@
 
                 <?php
             }
-        
+        }else{
+            ?>
+                <tr>
+                    <td></td>
+                    <td><center>Aucun commentaire à valider</center></td>
+                </tr>
+            <?php
+        }
         
         ?>
     </tbody>

@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,26 +26,19 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="widget">
-                                    <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
+                                    <h4 class="widget-title"><strong>Denier</strong> Articles</h4>
                                     <div>
+                                        
                                         <div class="media">
                                             <div class="pull-left">
                                                 <img class="widget-img" src="../assets/img/widget/widget1.jpg" alt="">
                                             </div>
                                             <div class="media-body">
-                                                <span class="media-heading"><a href="#">Blog Post A</a></span>
-                                                <small class="muted">Posted 14 April 2015</small>
+                                                <span class="media-heading"><a href="index.php?page=post&id=></a></span>
+                                                <small class="muted">Posté le </small>
                                             </div>
                                         </div>
-                                        <div class="media">
-                                            <div class="pull-left">
-                                                <img class="widget-img" src="../assets/img/widget/widget2.jpg" alt="">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="media-heading"><a href="#">Blog Post B</a></span>
-                                                <small class="muted">Posted 14 April 2015</small>
-                                            </div>
-                                        </div>
+          
                                     </div>
                                 </div>
                             </div>

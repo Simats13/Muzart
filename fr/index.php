@@ -390,6 +390,9 @@
         <!-- BARRE DE NAVIGATION -->
         <?php include 'header_fr.php'?>
 
+        <?php include 'blog/functions/post.func.php'?>
+        <?php include 'blog/functions/main-functions.php'?>
+
  
 
     </div>

@@ -10,8 +10,6 @@
                     posts.image,
                     posts.content,
                     posts.date,
-                    posts.category,
-                    posts.tags,
                     admin.name
             FROM posts
             JOIN admin

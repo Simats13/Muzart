@@ -5,18 +5,14 @@ if($post == false){
     header("Location:index.php?page=error");
 }else{
     ?>
-<section class="dark-wrapper opaqued parallax" data-parallax="scroll" src="img/posts/<?= $post->image ?>"
-    alt="<?= $post->title?>" data-speed="0.7">
-    <div class="section-inner text-center">
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="img/posts/<?= $post->image ?>"
+            data-speed="0.7">
+            <div class="section-inner text-center">
         <div class="container" style="margin-top:100px;">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 mt30 wow">
                     <h2 class="section-heading"><?= $post->title?></h2>
                     <div class="item-metas text-muted mb30 white">
-                        <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> Posté dans<span>
-                                <?= $post->category?></span></span>
-                        <span class="meta-item"><i class="pe-icon pe-7s-ticket"></i> Tags
-                            <span><?= $post->tags?></span></span>
                         <span class="meta-item"><i class="pe-icon pe-7s-user"></i> Auteur
                             <span><?= $post->name ?></span></span>
                         <span class="meta-item"><i class="pe-icon pe-7s-comment"></i> Commentaires <span>3</span></span>
@@ -27,7 +23,7 @@ if($post == false){
             </div>
         </div>
     </div>
-</section>
+        </section>
 
 <section>
     <div class="section-inner">
@@ -150,7 +146,7 @@ if($post == false){
 
                                 </div>
                                 <div id="comment_message"></div>
-                                <form method="post" id="commentform" class="comment-form" formaction="post.php">
+                                <form method="post" id="commentform" class="comment-form" >
                                     <input type="text" class="form-control col-md-4" name="name" id="name"
                                         placeholder="Votre Nom *" required
                                         data-validation-required-message="Veuillez entrer votre Nom !" />
@@ -163,8 +159,7 @@ if($post == false){
                                         placeholder="Votre Message *" required
                                         data-validation-required-message="Veuillez entrer votre Message !"></textarea>
                                     <label for="comment"></label>
-                                    <button type="submit" name="submit"
-                                        class="btn btn-primary pull-right">Répondre</button>
+                                    <button type="submit" name="submit" class="btn btn-primary pull-right">Répondre</button>
                                 </form>
                             </div>
                         </div>
@@ -176,3 +171,15 @@ if($post == false){
 <?php
 }
 ?>
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="../assets/js/init.js"></script>
+    <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=9867fe0fb5b91b3ddca9ba"></script>
+<script>
+    document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+        iframely.load( element, element.attributes.url.value );
+    } );
+</script>
