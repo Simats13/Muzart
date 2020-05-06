@@ -42,3 +42,17 @@ function get_comments(){
 
     return $result;
 }
+
+//Création de la fonction permettant d'obtenir les posts 
+function get_post(){
+    global $db;
+
+    $req = $db->query("
+        SELECT  admin.name
+        FROM admin
+    
+    ");
+
+    $result = $req->fetchObject();
+    return $result;
+}

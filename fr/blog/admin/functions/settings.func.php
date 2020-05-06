@@ -52,3 +52,18 @@ function add_modo($name,$email,$role,$token){
     mail($email,$subject,$message,$header);
 
 }
+
+function get_modos(){
+    global $db;
+
+    $req = $db->query("
+        SELECT * FROM admin
+    
+    ");
+
+    $results = [];
+     while ($rows = $req->fetchObject()){
+         $results[] = $rows;
+     }
+     return $results;
+}

@@ -1,4 +1,12 @@
 
+<?php
+if(hasnt_password()== 1){
+    header("Location:index.php?page=password");
+}
+$post = get_post();
+
+?>
+<h5>Bonjour <?= $_SESSION['admin']  ?></h5>
 <h2>Tableau de bord | Blog</h2>
 <div class="row">
     <?php 
@@ -108,17 +116,3 @@
     </tbody>
 </table>
 
-
-
-<pre>
-
-<?php 
-
-var_dump($_SESSION);
-
-
-
-
-?>
-
-</pre>

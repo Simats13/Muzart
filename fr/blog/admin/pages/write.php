@@ -1,3 +1,4 @@
+
 <h2>Poster un article</h2>
 
 <?php
@@ -109,7 +110,7 @@
 						'italic',
 						'link',
 						'bulletedList',
-						'numberedList',
+                        'numberedList',
 						'|',
 						'alignment',
 						'|',

@@ -42,7 +42,7 @@
                         <?php
                     }else{
                         $_SESSION['admin'] = $email;
-                        header("Location: index.php?page=dashboard");
+                        header("Location:index.php?page=dashboard");
                     }
 
                 }
