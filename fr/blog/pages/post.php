@@ -1,22 +1,27 @@
 <?php 
-
+//RECUPER LES POSTS DEPUIS LA BDD
 $post = get_post();
+//SI LE POST N'EXISTE PAS RETOURNE SUR LA PAGE ERROR
 if($post == false){
     header("Location:index.php?page=error");
 }else{
     ?>
+    <!--AFFICHE L'IMAGE DU POST SELON l'ID -->
         <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="img/posts/<?= $post->image ?>"
             data-speed="0.7">
             <div class="section-inner text-center">
         <div class="container" style="margin-top:100px;">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 mt30 wow">
+                <!--AFFICHE LE TITRE DU POST SELON l'ID -->
                     <h2 class="section-heading"><?= $post->title?></h2>
                     <div class="item-metas text-muted mb30 white">
                         <span class="meta-item"><i class="pe-icon pe-7s-user"></i> Auteur
+                        <!--AFFICHE L'AUTEUR DU POST SELON l'ID -->
                             <span><?= $post->name ?></span></span>
                         <span class="meta-item"><i class="pe-icon pe-7s-comment"></i> Commentaires <span>3</span></span>
                         <span class="meta-item post-date"><i class="pe-icon pe-7s-clock"></i> Publié le
+                        <!--AFFICHE LA DATE DU POST SELON l'ID -->
                             <span><?= date("d/m/Y à H:i",strtotime($post->date)); ?></span></span>
                     </div>
                 </div>
@@ -32,6 +37,7 @@ if($post == false){
                 <div id="post-content" class="col-sm-8 col-sm-offset-2 blog-item mb60 wow">
                     <div class="row">
                         <div class="col-sm-12 single-post-content">
+                        <!--AFFICHE LE CONTENU DE L'ARTICLE SELON l'ID -->
                             <p><?= nl2br($post->content); ?></p>
 
                             <div data-easyshare data-easyshare-url="http://www.distinctivethemes.com/">
@@ -69,11 +75,11 @@ if($post == false){
                         <h3>Commentaires</h3>
 
                         <?php 
+                        //RECUPERE LA FONCTION GET COMMENT (RECUPER LES COMMENTAIRES DANS LA BDD)
                         $responses = get_comments();
                             if($responses != false){
                                 foreach($responses as $response){
                          ?>
-                            <!--/.media-->
                             <blockquote>
                             <div class="media">
                                 <div class="pull-left">
@@ -82,6 +88,7 @@ if($post == false){
                                 <div class="media-body">
                                     <div class="well">
                                         <div class="media-heading">
+                                        <!--AFFICHE LE COMMENTAIRE SELON l'ID -->
                                             <span class="heading-font"><?= $response->name ?></span><small><?= date("d/m/Y à H:i",strtotime($response->date)); ?></small>
                                         </div>
                                         <p><?= nl2br($response->comments) ?></p>
@@ -92,6 +99,7 @@ if($post == false){
                         </blockquote>
                         <?php
                                     }
+                                    //SI AUCUN COMMENTAIRE N'A ETE PUBLIE UN MESSAGE DONC S'AFFICHE
                                 }else{
                                         echo "Aucun commentaire n'a été publié... Soyez le premier !";
                                 
@@ -106,21 +114,23 @@ if($post == false){
                                     <h3>Laisser un commentaire</h3>
                                     
                                     <?php 
+                                    //RECUPERATION DU FORMULAIRE ET TRAITEMENT (COMMENTAIRE)
                                     if(isset($_POST['submit'])){
                                         $name = htmlspecialchars(trim($_POST['name']));
                                         $email = htmlspecialchars(trim($_POST['email']));
                                         $comment = htmlspecialchars(trim($_POST['comment']));
                                         $errors = [];
-
+                                        //SI UN DES TROIS CHAMPS NE SONT PAS REMPLIS PAS DE TRAITEMENT ET AFFICHAGE D'UN MESSAGE D'ERREUR
                                         if(empty($name) || empty($email) || empty($comment)){
                                             $errors['empty'] = "Tous les champs n'ont pas été remplis";
                                         }else{
+                                            //SI L'EMAIL EST INVALIDE
                                             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                                                 $errors['email'] = "L'adresse email n'est pas valide";
                                             }
                                         }
 
-
+                                        //SI LE TABLEAU ERREUR N'EST PAS VIDE ALORS IL AFFICHE LES ERREURS
                                         if(!empty($errors)){
                                             ?>
                                                 <div class="alert alert-danger">
@@ -134,6 +144,7 @@ if($post == false){
                                                 </div>
                                             <?php
                                         }else{
+                                            //LE COMMENTAIRE S'AFFICHE EN TEMPS REEL UNE FOIS POSTE
                                             comment($name,$email,$comment);
                                             ?>
                                                 <script>

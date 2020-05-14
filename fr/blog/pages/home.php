@@ -26,6 +26,8 @@
 
 <?php
 
+//FAIT APPEL A LA FONCTION GET POST ET PARCOURT CHAQUE POST
+
 $posts = get_posts();
 foreach($posts as $post){
     ?>
@@ -48,6 +50,7 @@ foreach($posts as $post){
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="hover-item mb30">
+                                        <!--AFFICHE L'IMAGE DU POST SELON l'ID -->
                                             <img src="img/posts/<?= $post->image ?>" class="img-responsive smoothie"
                                                 alt="title">
                                             <div class="overlay-item-caption smoothie"></div>
@@ -58,16 +61,21 @@ foreach($posts as $post){
                                                         title="view article">View</a></h3>
                                             </div>
                                         </div>
+                                        <!--AFFICHE LE TITRE DU POST SELON l'ID -->
                                         <h2 class="post-title"><?= $post->title?></h2>
                                         <div class="item-metas text-muted mb30">
                                             <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> POSTÉ LE
+                                            <!--AFFICHE LA DATE DE L'ARTICLE SELON l'ID -->
                                                 <span><?= date("d/m/Y à H:i",strtotime($post->date)); ?></span></span>
                                             <span class="meta-item"><i class="pe-icon pe-7s-user"></i> AUTEUR
                                                 <span><?= $post->name ?></span></span>
                                         </div>
+                                        <!--AFFICHE LE CONTENU DU POST SELON l'ID -->
                                         <p><?= substr(nl2br($post->content),0,200) ?> ...</p>
+                                        <!--CREER UN LIEN VERS l'ARTICLE -->
                                         <a class="btn btn-primary mt30"
                                             href="index.php?page=post&id=<?= $post->id ?>">Lire l'article complet</a>
+                                            
                                     </div>
                                 </div>
                             </div>

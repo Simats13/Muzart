@@ -1,6 +1,7 @@
 <?php
+//FONCTION PERMETTANT D'INCLURE LES FICHIERS PHP EN FONCTION DU NOM DE LA PAGE
     include 'functions/main-functions.php';
-
+//Inclus les pages (home.php, contact,etc...)
     $pages = scandir('pages/');
     if(isset($_GET['page']) && !empty($_GET['page'])){
         if(in_array($_GET['page'].'.php',$pages)){
@@ -61,6 +62,7 @@
 
 <body>
 
+<!-- INCLUS LES PAGES, LE FOOTER ET L'HEADER -->
 
   <?php include 'pages/'.$page.'.php';?>
   <?php include 'body/footer.php'?>

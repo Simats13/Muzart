@@ -1,6 +1,7 @@
 <?php 
+//CREE UNE SESSION
     session_start();
-    
+//CONNEXION A LA BASE DE DONNES 
     $dbhost  = 'localhost';
     $dbname  = 'perusat';
     $dbuser  = 'root';
@@ -12,6 +13,7 @@
         die("Une erreur est survenue lors de la connexion à la base de données");
     }
 
+    //FONCTION SAVOIR SI L'UTILISATEUR EST UN ADMIN REVOIE SUR UNE PAGE SPECIFIQUE
 function admin(){
     if(isset($_SESSION['admin'])){
         global $db;
@@ -30,7 +32,7 @@ function admin(){
         return 0;
     }
 }
-
+//FONCTION S'IL N'A PAS DE MOT DE PASSE RENVOIE SUR UNE PAGE SPECIFIQUE
 function hasnt_password(){
     global $db;
 
