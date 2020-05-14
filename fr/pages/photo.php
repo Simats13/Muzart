@@ -34,67 +34,67 @@
                     <div>
                         <ul class="portfolio-items nopadding-lr isotope list-unstyled">
                             <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr apps isotope-item hover-item">
-                                <img src="assets/Photo/IMG_0857.jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(116).jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
                                 <div class="overlay-item-caption smoothie"></div>
                                 <div class="hover-item-caption smoothie">
                                     <div class="vertical-center smoothie">
                                         <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Photo</a></h3>
-                                        <a href="assets/Photo/IMG_0857.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
+                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(116).jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
                                         <a href="single-portfolio-carousel.html" class="smoothie btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr design isotope-item hover-item">
-                                <img src="assets/Photo/IMG_0882.jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
                                 <div class="overlay-item-caption smoothie"></div>
                                 <div class="hover-item-caption smoothie">
                                     <div class="vertical-center smoothie">
                                         <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen-video.html" title="view project">Photo</a></h3>
-                                        <a href="assets/Photo/IMG_0882.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
+                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
                                         <a href="single-portfolio-carousel.html" class="smoothie btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr photography isotope-item hover-item">
-                                <img src="assets/Photo/IMG_1985.jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
                                 <div class="overlay-item-caption smoothie"></div>
                                 <div class="hover-item-caption smoothie">
                                     <div class="vertical-center smoothie">
                                         <h3 class="smoothie mb30"><a href="single-portfolio.html" title="view project">Photo</a></h3>
-                                        <a href="assets/Photo/IMG_1985.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
+                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
                                         <a href="single-portfolio-carousel.html" class="smoothie btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr video isotope-item hover-item">
-                                <img src="assets/Photo/IMG_1989.jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(119).jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
                                 <div class="overlay-item-caption smoothie"></div>
                                 <div class="hover-item-caption smoothie">
                                     <div class="vertical-center smoothie">
                                         <h3 class="smoothie mb30"><a href="single-portfolio-carousel.html" title="view project">Photo</a></h3>
-                                        <a href="assets/Photo/IMG_1989.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
+                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(119).jpg title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
                                         <a href="single-portfolio-carousel.html" class="smoothie btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr design isotope-item hover-item">
-                                <img src="assets/photo1.PNG" class="img-responsive smoothie" alt="" width="100px" height="100px">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(121).jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
                                 <div class="overlay-item-caption smoothie"></div>
                                 <div class="hover-item-caption smoothie">
                                     <div class="vertical-center smoothie">
                                         <h3 class="smoothie mb30"><a href="single-portfolio-video.html" title="view project">Photo</a></h3>
-                                        <a href="assets/photo1.PNG" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
+                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
                                         <a href="single-portfolio-carousel.html" class="smoothie btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr photography isotope-item hover-item">
-                                <img src="assets/photo2.PNG" class="img-responsive smoothie" alt="" width="100px" height="100px">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(122).jpg" class="img-responsive smoothie" alt="" width="100px" height="100px">
                                 <div class="overlay-item-caption smoothie"></div>
                                 <div class="hover-item-caption smoothie">
                                     <div class="vertical-center smoothie">
                                         <h3 class="mb30 smoothie"><a href="single-portfolio.html" title="view project">Photo</a></h3>
-                                        <a href="assets/photo2.PNG" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
+                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(122).jpg" title="View Gallery" class="btn btn-primary lb-link smoothie" width="100px" height="100px">Zoom</a>
                                         <a href="single-portfolio-carousel.html" class="smoothie btn btn-primary">View</a>
                                     </div>
                                 </div>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,7 +10,39 @@
 
 //Création de la fonction permettant d'obtenir les posts 
 
+
+function get_posts(){
+    global $db;
+
+    $req = $db->query("
+
+        SELECT  posts.id,
+                posts.title,
+                posts.image,
+                posts.date,
+                posts.content,
+                admin.name
+        FROM posts
+        JOIN admin
+        ON posts.writter=admin.email
+        WHERE posted='1'
+        ORDER BY date DESC
+        LIMIT 0,4
+    
+    ");
+
+    $results = array();
+
+    while($rows = $req->fetchObject()){
+        $results[]= $rows;
+    }
+
+    return $results;
+
+}
+
 $posts = get_posts();
+
 ?>
 <body>
         <div id="footer-wrapper" class="footer-image-bg">
@@ -32,7 +63,7 @@ $posts = get_posts();
                                         <?php foreach($posts as $post){ ?>
                                         <div class="media">
                                             <div class="pull-left">
-                                                <img class="widget-img" src="blog/img/posts/<?php $post->image ?>" width="50px" height="50px" alt="">
+                                                <img class="widget-img" src="blog/img/posts/<?=$post->image ?>" width="50px" height="50px" alt="">
                                             </div>
                                             <div class="media-body">
                                                 <span class="media-heading"><a href="blog/index.php?page=post&id=<?= $post->id ?>"><?= $post->title ?></a></span>

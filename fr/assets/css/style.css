@@ -933,10 +933,16 @@ section {
 }
 
 .section-inner {
+<<<<<<< HEAD
     padding: 70px 0
 }
 
 
+=======
+    padding: 120px 0
+}
+
+>>>>>>> master
 .contact-section-inner {
     padding: 200px 0 120px;
 }

@@ -1,9 +1,9 @@
 <nav class="light-green">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="index.php?page=home" class="brand-logo">Panneau d'administration</a>
+            <a href="?page=principal" class="brand-logo">Panneau d'administration</a>
             <?php
-            if($page != 'login' && $page != 'new' && $page != 'password'){
+            if($page != 'login' && $page != 'new' && $page != 'password' && $page != 'principal'){
                 ?>
                     <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
 

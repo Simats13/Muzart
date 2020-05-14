@@ -19,16 +19,7 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </li>
-                            <li>
                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-behance"></i></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
@@ -38,10 +29,7 @@
                         <div class="pull-right text-right">
                             <ul class="list-inline">
                                 <li>
-                                    <div><i class="fa fa-envelope-o"></i> email@domain.com</div>
-                                </li>
-                                <li>
-                                    <div class="meta-item"><i class="fa fa-mobile"></i> +44 8780 648 605</div>
+                                    <div><i class="fa fa-envelope-o"></i> contact@iperusatcreation.com</div>
                                 </li>
                             </ul>
                         </div>
@@ -65,23 +53,23 @@
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown" role="menu">
-                            <a href="/Muzart/fr/index.php">Accueil</a>
+                            <a href="?">Accueil</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="/Muzart/fr/portofolio.php" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Portfolio</a>
+                        <li class="dropdown" role="menu">
+                            <a href="?page=portfolio">Portfolio</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="header-1.html">Galerie Photos</a></li>
-                                <li><a href="header-2.html">Galerie Vidéos</a></li>
+                                <li><a href="?page=photo">Galerie Photos</a></li>
+                                <li><a href="?page=video">Galerie Vidéos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="blog/index.php">Blog</a>
                         </li>
                         <li class="dropdown">
-                            <a href="/test.php">À Propos</a>
+                            <a href="?page=about">À Propos</a>
                         </li>
                         <li class="dropdown">
-                            <a href="/Muzart/fr/contact_fr.php">Contact</a>
+                            <a href="?page=contact">Contact</a>
                         </li>
                         <li class="dropdown">
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
@@ -126,54 +114,20 @@
         <div class="viewport-wrap">
             <div class="viewport">
                 <div class="widget mb50">
-                    <h4 class="widget-title">Latest Articles</h4>
+                    <h4 class="widget-title">Dernier articles</h4>
+                    <?php foreach($posts as $post){ ?>
                     <div>
                         <div class="media">
                             <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
+                                <img class="widget-img" src="blog/img/posts/<?=$post->image ?>" width="50px" height="50px" alt="<?= $post->title ?>">
                             </div>
                             <div class="media-body">
-                                <span class="media-heading"><a href="#">Panic In London</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
+                                <span class="media-heading"><a href="blog/index.php?page=post&id=<?= $post->id ?>"><?= $post->title ?></a></span>
+                                <small class="muted">Posté le <?= date("d/m/Y à H:i",strtotime($post->date)); ?></small>
                             </div>
                         </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">New iPhone News</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget3.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Our Year In Review</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget4.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">jQuery Tutorial</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="widget-img" src="assets/img/widget/widget5.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Sheen Interview</a></span>
-                                <small class="muted">Posted 14 April 2015</small>
-                            </div>
-                        </div>
-                    </div>
+                        <br>
+                    <?php } ?>
                 </div>
                 <div class="widget mb50">
                     <h4 class="widget-title"><strong>Latest</strong> Articles</h4>

@@ -70,10 +70,10 @@ if($post == false){
                         <h3>Commentaires</h3>
 
                         <?php 
-             $responses = get_comments();
-             if($responses != false){
-                 foreach($responses as $response){
-                     ?>
+                        $responses = get_comments();
+                            if($responses != false){
+                                foreach($responses as $response){
+                         ?>
                         <blockquote>
                             <div class="media">
                                 <div class="pull-left">
