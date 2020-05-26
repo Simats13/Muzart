@@ -25,7 +25,7 @@ if(hasnt_password()== 1){
                 </div>
 
                 <center>
-                    <a href="index.php?page=dashboard">Administration BLOG </a>
+                    <a href="/blog/admin/index.php?dashboard">Administration BLOG </a>
                 </center>
         </div>
     </div>

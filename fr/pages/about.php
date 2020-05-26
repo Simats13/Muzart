@@ -3,59 +3,71 @@
 
 <head>
 
-   
-    <title>A propos</title>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/ico/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" href="assets/img/ico/apple-touch-icon-57x57.png">
 
-    
+    <title>Pérusat Création</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/plugins.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/pe-icons.css" rel="stylesheet">
+
 </head>
 
-<body id="page-top" class="index">
-
-
-
-
-        <div class="preloader">
-            <div class="preloader-img">
-                <span class="loading-animation animate-flicker"><img src="assets/img/loading.GIF" alt="loading"/></span>
-            </div>
-        </div>
-    
-<!--Description Isabelle Pérusat + photo d'elle-->
-       
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg2.jpg" data-speed="0.7">
+ <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg2.jpg" data-speed="0.7">
             <div class="section-inner pad-top-200">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 mt30 wow text-center">
-                            <h2 class="section-heading">À Propos</h2>
+                            <h2 class="section-heading" style="margin-bottom:100px">A PROPOS</h2>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+</section>
 
-        <section id="welcome">
+        <section class="white-bg">
+           
+
+<!--Description Isabelle Pérusat + photo d'elle-->
+        <section id="welcome" style="margin-top:50px;margin-left:20px">
             <div class="section-inner nopaddingbottom">
 
-                <div class="container">
+                
                     <div class="row">
                         <div class="col-md-6">
                             <p class="lead">Isabelle Pérusat née à Montpellier, commence la musique à 5 ans , passe un vingtaine d'années à Paris , pianiste , compositrice , chanteuse , parcours classique , orientation pop music , photographe , création scénique , vidéo , cette artiste complète à plus d'une corde à son arc .
                                 Dans les années 90 , elle travaille avec le groupe «Eurythmics» en collaborant avec eux à la sortie d'un album .
-                                Isabelle fait du travail de recherche sur l'art vibratoire ( unir les émotions au travers de la musique ).. </p>
-                            <p class="mt30"><a href="?page=contact" class="btn btn-primary btn-theme page-scroll">Contactez-moi</a></p>
+                                Isabelle fait du travail de recherche sur l'art vibratoire ( unir les émotions au travers de la musique ). </p>
+                            <p class="mt30"><a href="#contact" class="btn btn-primary btn-theme page-scroll">Contactez-moi</a></p>
                         </div>
 
                         <div class="col-md-6">
-                            <img src="assets/img/bg/bg_perusat.jpg" class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s" alt="">
+                            <img src="assets/Photo/isabelle.png" class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s" alt="">
                         </div>
                     </div>
                 </div>
 
             </div>
         </section>
-
-        <section class="white-bg">
+<!-- Oeuvres populaires-->
+        <section class="white-bg" style="margin-top:50px;margin-bottom:50px">
             <div class="section-inner nopadding-bottom">
                 
                     <div class="row">
@@ -66,7 +78,7 @@
                                         <li>
                                             <div class="row hover-item">
                                                 <div class="col-xs-12">
-                                                    <img src="assets/img/piano.png" class="img-responsive smoothie" alt="">
+                                                    <img src="assets/img/ensemble.png" class="img-responsive smoothie" alt="">
                                                 </div>
                                                 <div class="col-xs-12 hover-item-caption smoothie">
                                                     <div class="vertical-center">
@@ -90,7 +102,7 @@
                                         <li>
                                             <div class="row hover-item">
                                                 <div class="col-xs-12">
-                                                    <img src="assets/Photo/2.jpg" class="img-responsive smoothie" alt="">
+                                                    <img src="assets/img/piano.PNG" class="img-responsive smoothie" alt="">
                                                 </div>
                                                 <div class="col-xs-12 hover-item-caption smoothie">
                                                     <div class="vertical-center">
@@ -103,7 +115,7 @@
                                         <li>
                                             <div class="row hover-item">
                                                 <div class="col-xs-12">
-                                                    <img src="assets/img/piano.png" class="img-responsive smoothie" alt="">
+                                                    <img src="assets/img/piano.PNG" class="img-responsive smoothie" alt="">
                                                 </div>
                                                 <div class="col-xs-12 hover-item-caption smoothie">
                                                     <div class="vertical-center">
@@ -126,13 +138,18 @@
                 </div>
             </div>
         </section>
-</body>
 
+    </div>
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="assets/js/init.js"></script>
+
+
+</body>
 </html>
-   <!-- FOOTER-->
-   <?php include 'body/footer.php'?>
-        <!-- BARRE DE NAVIGATION -->
-        <?php include 'body/header.php'?>
 
 <script type="text/javascript">
     window.dataLayer = window.dataLayer || [];
@@ -140,10 +157,5 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-55234356-6');
-    </script> 
+</script> 
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="assets/js/init.js"></script>
