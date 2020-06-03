@@ -1,109 +1,127 @@
-<html lang="en">
+<?php 
+$videos = get_videos();
+
+$images = get_images();
+
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
 
-<body>
-    <div class="row">
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../assets/img/bg/bg2.jpg"
-            data-speed="0.7"style="margin-bottom:50px" >
+   
+    <title>Pérusat Création - Portfolio</title>
+
+   
+</head>
+<!-- Navigation -->
+
+<div class="preloader">
+            <div class="preloader-img">
+                <span class="loading-animation animate-flicker"><img src="../assets/img/loading.GIF" alt="loading"/></span>
+            </div>
+        </div>
+
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../assets/img/bg/bg2.jpg" data-speed="0.7">
             <div class="section-inner pad-top-200">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 mt30 wow text-center">
-                            <h2 class="section-heading" style="margin-bottom:100px">Blog</h2>
+                            <h2 class="section-heading" style="margin-bottom:100px">PORTFOLIO</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-
-
-
-<?php
-
-//FAIT APPEL A LA FONCTION GET POST ET PARCOURT CHAQUE POST
-
-$posts = get_posts();
-foreach($posts as $post){
-    ?>
-
-
-        <div class="master-wrapper">
-
-            <div class="preloader">
-                <div class="preloader-img">
-                    <span class="loading-animation animate-flicker"><img src="../assets/img/loading.GIF"
-                            alt="loading" /></span>
-                </div>
-            </div>
-            <section>
-                <div class="section-inner">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-sm-10 col-sm-offset-1 blog-item mb100 wow match-height">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="hover-item mb30">
-                                        <!--AFFICHE L'IMAGE DU POST SELON l'ID -->
-                                            <img src="img/posts/<?= $post->image ?>" class="img-responsive smoothie"
-                                                alt="title">
-                                            <div class="overlay-item-caption smoothie"></div>
-                                            <div class="hover-item-caption smoothie">
-                                                <h3 class="vertical-center smoothie"><a
-                                                        href="index.php?page=post&id=<?= $post->id ?>"
-                                                        class="smoothie btn btn-primary page-scroll"
-                                                        title="view article">Voir l'article</a></h3>
-                                            </div>
-                                        </div>
-                                        <!--AFFICHE LE TITRE DU POST SELON l'ID -->
-                                        <h2 class="post-title"><?= $post->title?></h2>
-                                        <div class="item-metas text-muted mb30">
-                                            <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> POSTÉ LE
-                                            <!--AFFICHE LA DATE DE L'ARTICLE SELON l'ID -->
-                                                <span><?= date("d/m/Y à H:i",strtotime($post->date)); ?></span></span>
-                                            <span class="meta-item"><i class="pe-icon pe-7s-user"></i> AUTEUR
-                                                <span><?= $post->name ?></span></span>
-                                        </div>
-                                        <!--AFFICHE LE CONTENU DU POST SELON l'ID -->
-                                        <p><?= substr(nl2br($post->content),0,200) ?> ...</p>
-                                        <!--CREER UN LIEN VERS l'ARTICLE -->
-                                        <a class="btn btn-primary mt30"
-                                            href="index.php?page=post&id=<?= $post->id ?>">Lire l'article complet</a>
-                                            
-                                    </div>
-                                </div>
-                            </div>
-
+        <section class="white-bg">
+            <div class="section-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center mb50">
+                            <ul class="portfolio-filter mb30 list-inline wow">
+                                <li><a class="btn btn-primary active" href="#" data-filter="*">Toutes les oeuvres</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".photo">Etude Photographique</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".video">Art Video</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </section>
+                <div class="container" style="margin-bottom:100px">
+                    <div>
+                        <?php
+                            
+                        
+                        
+                        
+                        ?>
+                        <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                            <?php 
+                                foreach($images as $image){
+                            
+                            ?>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr photo isotope-item">
+                                <div class="hover-item">
+                                    <img src="img/posts/<?= $image->image?>" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
+                                            <a href="../assets/img/portfolio/portfolio1.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
+                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php 
+                                }
+                                
+                                foreach($videos as $video){
+                            
+                            
+                        
+                        ?>
 
-            <?php
-}
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr video isotope-item">
+                                <div class="hover-item">
+                                <figure class="media"><oembed url="<?= $video->image?>"></oembed></figure>
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project"><?= $video->title?></a></h3>
+                                            <a href="<?= $video->image?>" class="smoothie btn btn-primary">Visionner la vidéo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php 
+                             }
+                        
+                        
+                        ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-?>
-  <div class="row paging text-center" style="margin-bottom:50px">
-    <a class="btn btn-primary mt30" href="#">Anciens Posts</a>
-  </div>
-        </div>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="../assets/js/init.js"></script>
+    <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=9867fe0fb5b91b3ddca9ba"></script>
+    <script>
+        document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+            iframely.load( element, element.attributes.url.value );
+        } );
+    </script>
 
-        <!-- Plugin JavaScript -->
-        <script src="../assets/js/plugins.js"></script>
 
-        <!-- Plugins -->
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-
-        <!-- Custom JavaScript -->
-        <script src="../assets/js/init.js"></script>
 </body>
-
 </html>
+

@@ -1,28 +1,62 @@
 <?php 
-//RECUPERE LES POSTS DEPUIS LA BDD
-$picture = get_picture();
-//SI LE POST N'EXISTE PAS RETOURNE SUR LA PAGE ERROR
-if($picture == false){
-    header("Location:index.php?page=error");
-}else{
+
     ?>
-    <!--AFFICHE L'IMAGE DU POST SELON l'ID -->
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="img/posts/<?= $picture->image ?>"
-            data-speed="0.7">
-            <div class="section-inner text-center">
-        <div class="container" style="margin-top:100px;">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 mt30 wow">
-                <!--AFFICHE LE TITRE DU POST SELON l'ID -->
-                    <h2 class="section-heading"><?= $post->title?></h2>
-                    <div class="item-metas text-muted mb30 white">
-                        <span class="meta-item"><i class="pe-icon pe-7s-user"></i> Auteur
+
+<body id="page-top" class="index">
+
+    <div class="master-wrapper">
+
+        <div class="preloader">
+            <div class="preloader-img">
+                <span class="loading-animation animate-flicker"><img src="../assets/img/loading.GIF" alt="loading"/></span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <ul class="owl-carousel-paged wow fadeIn list-unstyled post-slider" data-items="3" data-items-desktop="[1200,3]" data-items-desktop-small="[980,3]" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
+                <li>
+                    <div class="hover-item mb30 post-slide">
+                        <img src="../assets/img/portfolio/portfolio1.jpg" class="img-responsive smoothie" alt="title">
+                    </div>
+                </li>
+                <li>
+                    <div class="hover-item mb30 post-slide">
+                        <img src="../assets/img/portfolio/portfolio2.jpg" class="img-responsive smoothie" alt="title">
+                    </div>
+                </li>
+                <li>
+                    <div class="hover-item mb30 post-slide">
+                        <img src="../assets/img/portfolio/portfolio3.jpg" class="img-responsive smoothie" alt="title">
+                    </div>
+                </li>
+                <li>
+                    <div class="hover-item mb30 post-slide">
+                        <img src="../assets/img/portfolio/portfolio4.jpg" class="img-responsive smoothie" alt="title">
+                    </div>
+                </li>
+            </ul>
+        </header>
+
+        <section>
+            <div class="section-inner">
+                <div class="container pad-sides-120">
+                    <div class="row project-item wow">
+                        <div class="col-sm-9">
+                            <p>Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods. It satisfied to mr commanded consisted disposing engrossed. Tall snug do of till on easy. Form not calm new fail.</p>
+                            <p>Behind sooner dining so window excuse he summer. Breakfast met certainty and fulfilled propriety led. Waited get either are wooded little her. Contrasted unreserved as mr particular collecting it everything as indulgence. Seems ask meant merry could put. Age old begin had boy noisy table front whole given.</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p><strong>DATE:</strong> 21/01/2015</p>
+                            <p><strong>CLIENT:</strong> Jeeves Design</p>
+                            <p><strong>TAGS:</strong> Brand Design, Graphics</p>
+                            <p class="mt30"><a href="#contact" class="btn btn-primary btn-theme page-scroll">Visit Project</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+
 
 <section>
     <div class="section-inner">
@@ -172,9 +206,7 @@ if($picture == false){
                 </div>
             </div>
      </section>
-    <?php
-}
-?>
+
     
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
@@ -204,4 +236,17 @@ if($picture == false){
     document.querySelectorAll( 'oembed[url]' ).forEach( element => {
         iframely.load( element, element.attributes.url.value );
     } );
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        'use strict';
+        jQuery('#headerwrap').backstretch([
+            "assets/img/portfolio/portfolio1.jpg",
+            "assets/img/portfolio/portfolio2.jpg",
+            "assets/img/portfolio/portfolio3.jpg"
+        ], {
+            duration: 8000,
+            fade: 500
+        });
+    });
 </script>

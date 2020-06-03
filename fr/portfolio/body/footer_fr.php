@@ -8,7 +8,7 @@
 </head>
 <?php
 
-$posts = get_post();
+
 
 ?>
 <body>

@@ -40,7 +40,7 @@
   <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/ico/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" href="../assets/img/ico/apple-touch-icon-57x57.png">
 
-  <title>Pérusat Création - Blog</title>
+  <title>Pérusat Création - Portfolio</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">

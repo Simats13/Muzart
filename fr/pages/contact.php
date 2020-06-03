@@ -68,7 +68,7 @@
 
                         <div class="col-md-6">
                             <div id="message"></div>
-                            <form method="post"  id="contactform" class="main-contact-form wow">
+                            <form method="post"  id="contactform" class="main-contact-form wow" action="getContact.php">
                                 <input type="text" class="form-control col-md-4" name="name" placeholder="Votre nom *" id="name" required data-validation-required-message="Please enter your name." />
                                 <input type="text" class="form-control col-md-4" name="email" placeholder="Votre e-mail *" id="email" required data-validation-required-message="Please enter your email address." />
                                 <textarea name="comments" class="form-control" id="comments" placeholder="Votre message *" required data-validation-required-message="Please enter a message."></textarea>

@@ -39,6 +39,7 @@
                                 <li><a class="btn btn-primary" href="#" data-filter=".photography">Photos</a></li>
                                 <li><a class="btn btn-primary" href="#" data-filter=".portrait">Portrait</a></li>
                                 <li><a class="btn btn-primary" href="#" data-filter=".paysage">Paysage</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".paysage">Exposition</a></li>
                             </ul>
                         </div>
                     </div>
@@ -117,6 +118,9 @@
                 </div>
             </div>
         </section>
+
+        </br>
+        </br>
 
        
 
