@@ -21,7 +21,7 @@
         <!-- Navigation -->
 
         <!-- Header -->
-        <header id="headerwrap" class="backstretched fullheight no-overlay">
+        <header id="headerwrap" class="backstretched fullheight no-overlay" style="margin-bottom:50px">
             <div class="container vertical-center">
                 <div class="intro-text vertical-center text-left smoothie">
                     <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">Isabelle Perusat</div>
@@ -34,7 +34,7 @@
     <!-- Portfolio -->
 
         <section>
-            <div class="section-inner">
+            <div class="section-inner" style="margin-bottom:50px">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 mb100 wow">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container" style="margin-bottom:50px">
                     <div class="col-md-12">
                         <ul class="portfolio-items nopadding-lr isotope list-unstyled">
                             <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr apps isotope-item">
@@ -175,7 +175,7 @@
             </div>
         </section>
 
-        <section class="dark-wrapper dark-grey-opaqued opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7">
+        <section class="dark-wrapper dark-grey-opaqued opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7" style="margin-bottom:50px">
             <div class="section-inner">
                 <div class="container">
                     <div class="row">
@@ -212,7 +212,7 @@
             </div>
         </section>
 
-        <section class="white-bg">
+        <section class="white-bg" style="margin-bottom:50px">
             <div class="section-inner nopadding-bottom">
                 <div class="container">
                     <div class="row">

@@ -43,12 +43,12 @@
         <!-- Navigation -->
 
 
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7">
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7" style="margin-bottom:50px">
             <div class="section-inner pad-top-200">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 mt30 wow text-center">
-                            <h2 class="section-heading">Me Contacter</h2>
+                            <h2 class="section-heading" style="margin-bottom:100px">Me Contacter</h2>
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 mt30 wow text-center">
-                                <h2 class="section-heading" style="margin-bottom:100px">ETUDE PHOTOGRAPHIQUE</h2>
+                                <h2 class="section-heading" style="margin-bottom:100px">ART VIDEO</h2>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,6 @@
             <div class="col-md-12 text-center mb50">
                 <ul class="portfolio-filter mb30 list-inline wow">
                     <li><a class="btn btn-primary" href="?page=portfolio" data-filter=".portfolio">Tout</a></li>
-                    <li><a class="btn btn-primary " href="?page=photo" data-filter="*">Photos</a></li>
                     <li><a class="btn btn-primary active" href="?page=video" data-filter=".video">Vidéos</a></li>
                 </ul>
             </div>
@@ -104,6 +103,8 @@
 
 
     </div>
+
+    <br>
 
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

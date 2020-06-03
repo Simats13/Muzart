@@ -37,7 +37,8 @@
                             <ul class="portfolio-filter mb30 list-inline wow">
                                 <li><a class="btn btn-primary active" href="#" data-filter="*">Tout</a></li>
                                 <li><a class="btn btn-primary" href="#" data-filter=".photography">Photos</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".video">Vidéos</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".portrait">Portrait</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".paysage">Paysage</a></li>
                             </ul>
                         </div>
                     </div>

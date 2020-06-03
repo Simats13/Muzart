@@ -1,17 +1,16 @@
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
     <meta charset="utf-8">
-    <title>Footer</title>
-    <link href="../assets/css/style.css" rel="stylesheet">
 
 </head>
+<?php
 
+$posts = get_posts();
+
+?>
 <body>
         <div id="footer-wrapper" class="footer-image-bg">
             <section class="transparent-wrapper">
@@ -26,19 +25,19 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="widget">
-                                    <h4 class="widget-title"><strong>Denier</strong> Articles</h4>
+                                    <h4 class="widget-title"><strong>Dernier</strong> Articles</h4>
                                     <div>
-                                        
+                                        <?php foreach($posts as $post){ ?>
                                         <div class="media">
                                             <div class="pull-left">
-                                                <img class="widget-img" src="../assets/img/widget/widget1.jpg" alt="">
+                                                <img class="widget-img" src="img/posts/<?=$post->image ?>" width="50px" height="50px" alt="">
                                             </div>
                                             <div class="media-body">
-                                                <span class="media-heading"><a href="index.php?page=post&id=></a></span>
-                                                <small class="muted">Posté le </small>
+                                                <span class="media-heading"><a href="blog/index.php?page=post&id=<?= $post->id ?>"><?= $post->title ?></a></span>
+                                                <small class="muted">Posté le <?= date("d/m/Y à H:i",strtotime($post->date)); ?></small>
                                             </div>
                                         </div>
-          
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>

@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container" style="margin-bottom:100px">
                     <div>
                         <ul class="portfolio-items nopadding-lr isotope list-unstyled">
                             <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr apps isotope-item">

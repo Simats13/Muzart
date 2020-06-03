@@ -58,8 +58,8 @@
                         <li class="dropdown" role="menu">
                             <a href="?page=portfolio">Portfolio</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="?page=photo">Galerie Photos</a></li>
-                                <li><a href="?page=video">Galerie Vidéos</a></li>
+                                <li><a href="?page=photo">Étude Photographique</a></li>
+                                <li><a href="?page=video">Art Vidéos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
