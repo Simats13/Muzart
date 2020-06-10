@@ -57,13 +57,13 @@ $images = get_picture();
                         <ul class="portfolio-items nopadding-lr isotope list-unstyled">
                         <?php foreach($images as $image){ ?>
                         
-                            <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr portrait isotope-item hover-item">
+                            <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr <?= $image->category?> isotope-item hover-item">
                                 <img src="img/posts/<?= $image->image?>" class="img-responsive smoothie" alt="" width="50px" height="50px">
                                 <div class="overlay-item-caption smoothie"></div>
                                 <div class="hover-item-caption smoothie">
                                     <div class="vertical-center smoothie">
                                         <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project"><?=$image->title?></a></h3>
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(116).jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
+                                        <a href="img/posts/<?= $image->image?>" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
                                         <a href="index.php?page=post&id=<?= $image->id ?>" class="smoothie btn btn-primary">Visionner</a>
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-<nav class="light-green">
+<nav class="light-blue">
     <div class="container">
         <div class="nav-wrapper">
             <a href="../../admin/index.php?page=principal" class="brand-logo">Panneau d'administration</a>

@@ -3,14 +3,12 @@
         <div class="nav-wrapper">
             <a href="?page=principal" class="brand-logo">Panneau d'administration</a>
             <?php
-            if($page != 'login' && $page != 'new' && $page != 'password' && $page != 'principal'){
+            if($page != 'login' && $page != 'new' && $page != 'password'){
                 ?>
                     <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
 
                     <ul class="right hide-on-med-and-down">
-                        <li class="<?php echo ($page=="dashboard")?"active" : ""; ?>"><a href="index.php?page=dashboard"><i class="material-icons">dashboard</i></a></li>
-                        <li class="<?php echo ($page=="list")?"active" : ""; ?>"><a href="index.php?page=list"><i class="material-icons">view_list</i></a></li>
-                        <li class="<?php echo ($page=="write")?"active" : ""; ?>"><a href="index.php?page=write"><i class="material-icons">edit</i></a></li>
+                        <li class="<?php echo ($page=="principal")?"active" : ""; ?>"><a href="index.php?page=principal"><i class="material-icons">dashboard</i></a></li>
                         <?php 
                             if( admin()==1){
                                 ?>
@@ -24,9 +22,7 @@
                     </ul>
 
                     <ul class="side-nav" id="mobile-menu">
-                        <li class="<?php echo ($page=="dashboard")?"active" : ""; ?>"><a href="index.php?page=dashboard">Tableau de bord</a></li>
-                        <li class="<?php echo ($page=="list")?"active" : ""; ?>"><a href="index.php?page=list">Listing des articles</a></li>
-                        <li class="<?php echo ($page=="write")?"active" : ""; ?>"><a href="index.php?page=write">Publier un article</a></li>
+                        <li class="<?php echo ($page=="dashboard")?"active" : ""; ?>"><a href="index.php?page=principal">Tableau de bord</a></li>
                         <?php 
                             if( admin()==1){
                             ?>

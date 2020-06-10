@@ -69,9 +69,9 @@ $images = get_images();
                                     <div class="overlay-item-caption smoothie"></div>
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
-                                            <a href="../assets/img/portfolio/portfolio1.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
+                                            <h3 class="smoothie mb30"><a href="?page=post_image&id=<?= $image->id ?>" title="view project"><?= $image->title ?></a></h3>
+                                            <a href="img/posts/<?= $image->image?>" title="View Gallery" class="btn btn-primary lb-link smoothie">Visionner</a>
+                                            <a href="?page=post_image&id=<?= $image->id ?>" class="smoothie btn btn-primary">En savoir plus</a>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,8 @@ $images = get_images();
                                     <div class="overlay-item-caption smoothie"></div>
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project"><?= $video->title?></a></h3>
+                                            <h3 class="smoothie mb30"><a href="?page=post_video&id=<?= $video->id ?>" title="view project"><?= $video->title ?></a></h3>
+                                            <a href="?page=post_video&id=<?= $video->id ?>" class="smoothie btn btn-primary">En savoir plus</a>
                                             <a href="<?= $video->image?>" class="smoothie btn btn-primary">Visionner la vidéo</a>
                                         </div>
                                     </div>

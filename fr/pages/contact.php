@@ -34,11 +34,7 @@
 
     <div class="master-wrapper">
 
-        <div class="preloader">
-            <div class="preloader-img">
-                <span class="loading-animation animate-flicker"><img src="assets/img/loading.GIF" alt="loading"/></span>
-            </div>
-        </div>
+ 
 
         <!-- Navigation -->
 
@@ -57,7 +53,6 @@
 
         <section id="welcome">
             <div class="section-inner nopaddingbottom">
-
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -68,11 +63,52 @@
 
                         <div class="col-md-6">
                             <div id="message"></div>
-                            <form method="post"  id="contactform" class="main-contact-form wow" action="getContact.php">
+                            <?php 
+                                    //RECUPERATION DU FORMULAIRE ET TRAITEMENT (COMMENTAIRE)
+                                    if(isset($_POST['submit'])){
+                                        $name = htmlspecialchars(trim($_POST['name']));
+                                        $email = htmlspecialchars(trim($_POST['mail']));
+                                        $message = htmlspecialchars(trim($_POST['message']));
+                                        $errors = [];
+                                        //SI UN DES TROIS CHAMPS NE SONT PAS REMPLIS PAS DE TRAITEMENT ET AFFICHAGE D'UN MESSAGE D'ERREUR
+                                        if(empty($name) || empty($email) || empty($message)){
+                                            $errors['empty'] = "Tous les champs n'ont pas été remplis";
+                                        }else{
+                                            //SI L'EMAIL EST INVALIDE
+                                            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                                                $errors['email'] = "L'adresse email n'est pas valide";
+                                            }
+                                        }
+
+                                        //SI LE TABLEAU ERREUR N'EST PAS VIDE ALORS IL AFFICHE LES ERREURS
+                                        if(!empty($errors)){
+                                            ?>
+                                                <div class="alert alert-danger">
+                                                    <div class="alert-heading">
+                                                        <?php
+                                                            foreach($errors as $error){
+                                                                echo $error."<br/>";
+                                                            }
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else{
+                                            //LE COMMENTAIRE S'AFFICHE EN TEMPS REEL UNE FOIS POSTE
+                                            echo "Nom:".$name."<br>"."Email:".$email."<br>"."Message:".$message; // Test pour voir si ça récupère bien les données 
+                                            recevoir($name,$email,$message);
+
+                                        }
+                                    }
+
+
+                                    ?>
+                            <form method="post" class="main-contact-form wow">
                                 <input type="text" class="form-control col-md-4" name="name" placeholder="Votre nom *" id="name" required data-validation-required-message="Please enter your name." />
-                                <input type="text" class="form-control col-md-4" name="email" placeholder="Votre e-mail *" id="email" required data-validation-required-message="Please enter your email address." />
-                                <textarea name="comments" class="form-control" id="comments" placeholder="Votre message *" required data-validation-required-message="Please enter a message."></textarea>
+                                <input type="text" class="form-control col-md-4" name="mail" placeholder="Votre e-mail *" id="mail" required data-validation-required-message="Please enter your email address." />
+                                <textarea name="message"  class="form-control" id="message" placeholder="Votre message *" required data-validation-required-message="Please enter a message."></textarea>
                                 <input class="btn btn-primary mt30 btn-grey pull-right" type="submit" name="submit" value="Submit" />
+                                <button type="submit" name="submit" id="submit" class="btn btn-primary pull-right">Répondre</button>
                             </form>
                         </div>
                     </div>
@@ -86,7 +122,7 @@
 
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
+    
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="assets/js/init.js"></script>
 
