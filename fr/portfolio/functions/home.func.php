@@ -10,14 +10,12 @@ function get_images(){
                 image.content,
                 image.writter,
                 image.image,
-                image.category,
                 image.date,
-                image.posted,
                 admin.name
         FROM image
         JOIN admin
         ON image.writter=admin.email
-        WHERE posted='1'
+   
         ORDER BY date DESC
         LIMIT 0,4
     

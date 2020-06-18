@@ -3,42 +3,91 @@
 
 <?php
 
-    if(isset($_POST['post'])){
-        $title = htmlspecialchars(trim($_POST['title']));
-        $content = (trim($_POST['content']));
-        $posted = isset($_POST['public']) ? "1" : "0";
 
-        $errors = [];
+if(isset($_POST['post'])){
+    //RECUPERE LES VARIABLES
+    $title = htmlspecialchars(trim($_POST['title']));
+    $content = (trim($_POST['content']));
+    $category_id = $db->quote($_POST['category_id']);
+    $posted = isset($_POST['public']) ? "1" : "0";
 
-        if(empty($title) || empty($content)){
-            $errors['empty'] = "Veuillez remplir tous les champs";
+    $errors = [];
+
+//AFFICHE LES ERREURS 
+    if(empty($title) || empty($content)){
+        $errors['empty'] = "Veuillez remplir tous les champs";
+    }
+
+    if(!empty($_FILES['image']['name'])){
+        $file = $_FILES['image']['name'];
+        $extensions = ['.png','.jpg','.jpeg','.gif','.PNG','.JPG','.JPEG','.GIF'];
+        $extension = strrchr($file,'.');
+
+        if(!in_array($extension,$extensions)){
+            $errors['image'] = "Cette image n'est pas valable";
+        }
+    }
+
+    if(!empty($errors)){
+        ?>
+<div class="card red">
+<div class="card-content white-text">
+    <?php
+                        foreach($errors as $error){
+                            echo $error."<br/>";
+                        }
+                    ?>
+</div>
+</div>
+<?php
+    }else{
+        post($title,$content,$category_id,$posted);
+        if(!empty($_FILES['images']['name'])){
+                        /**
+            * ENVOIS DES IMAGES
+            **/
+            $work_id = $db->lastInsertId();
+            $files = $_FILES['images'];
+            $images = array();
+
+            foreach($files['tmp_name'] as $k => $v){
+                $image = array(
+                    'name' => $files['name'][$k],
+                    'tmp_name' => $files['tmp_name'][$k]
+                );
+
+                $extension = pathinfo($image['name'], PATHINFO_EXTENSION);
+                if(in_array($extension, array('jpg','png'))){
+                    $db->query("INSERT INTO image SET image_id=$work_id");
+                    $image_id = $db->lastInsertId();
+                    $image_name = $image_id . '.' . $extension;
+                    move_uploaded_file($image['tmp_name'],'../img/posts/' . $image_name);
+                    $image_name = $db->quote($image_name);
+                    $db->query("UPDATE image SET name=$image_name WHERE id = $image_id");
+                }
+            }
+        }else{
+            $id = $db->lastInsertId();
+            header("Location:index.php?page=post&id=".$id);
+        }
+    }
+}
+
+       /**
+        * On récup la liste des catégories
+        **/
+        $select = $db->query('SELECT id, name FROM categories ORDER BY name ASC');
+        $categories = $select->fetchAll();
+        $categories_list = array();
+        $images = array();
+        foreach($categories as $category){
+            $categories_list[$category['id']] = $category['name'];
         }
 
-        if(!empty($_FILES['image']['name'])){
-            $file = $_FILES['image']['name'];
-            $extensions = ['.png','.jpg','.jpeg','.gif','.PNG','.JPG','.JPEG','.GIF'];
-            $extension = strrchr($file,'.');
 
-            if(!in_array($extension,$extensions)){
-                $errors['image'] = "Cette image n'est pas valable";
-            }
-        }if(!empty($_FILES['image1']['name'])){
-            $file = $_FILES['image1']['name'];
-            $extensions = ['.png','.jpg','.jpeg','.gif','.PNG','.JPG','.JPEG','.GIF'];
-            $extension = strrchr($file,'.');
+?>
 
-            if(!in_array($extension,$extensions)){
-                $errors['image1'] = "Cette image n'est pas valable";
-            }
-        }if(!empty($_FILES['image2']['name'])){
-            $file = $_FILES['image2']['name'];
-            $extensions = ['.png','.jpg','.jpeg','.gif','.PNG','.JPG','.JPEG','.GIF'];
-            $extension = strrchr($file,'.');
-
-            if(!in_array($extension,$extensions)){
-                $errors['image2'] = "Cette image n'est pas valable";
-            }
-        }
+<?php
 
         if(!empty($errors)){
             ?>
@@ -51,27 +100,8 @@
                         ?>
     </div>
 </div>
-<?php
-        }else{
-            post($title,$content,$posted);
-            if(!empty($_FILES['image']['name']) || !empty($_FILES['image1']['name']) || !empty($_FILES['image2']['name']) ){
-                if(isset($_FILES['image']['name'])){
-                    test($_FILES['image']['tmp_name'],$extension);
-                }elseif(isset($_FILES['image1']['name'])){
-                    test1($_FILES['image1']['tmp_name'],$extension);
-                }elseif(isset($_FILES['image2']['name'])){
-                    test2($_FILES['image2']['tmp_name'],$extension);
-                }
- 
-            }else{
-                $id = $db->lastInsertId();
-                
-            }
-        }
-    }
 
-
-?>
+    <?php  } ?>
 
 
 <form method="post" enctype="multipart/form-data">
@@ -85,41 +115,23 @@
             <textarea name="content" id="content" class="materialize-textarea" placeholder="Contenu de l'article"></textarea>
             <label for="content"></label>
         </div>
-        <div class="col s12">
-            <div class="input-field file-field">
-                <div class="btn col s12">
-                    <span>Image Général</span>
-                    <input type="text" class="file-path col s10" readonly />
-                    <input type="file" name="image" class="btn col s12" multiple/>
-                    <br>
-                </div>
-            </div>
-            
+
+        <div class="form-group input-field col s12">
+                <?= select('category_id', $categories_list); ?>
+                <label for="category_id">Catégorie</label>
         </div>
 
-        <div class="col s12">
-            <div class="input-field file-field">
-                <div class="btn col s12">
-                    <span>Image 1</span>
-                    <input type="text" class="file-path col s10" readonly />
-                    <input type="file" name="image1" class="btn col s12" multiple/>
-                    <br>
-                </div>
-            </div>
-            
-        </div>
 
-        <div class="col s12">
-            <div class="input-field file-field">
-                <div class="btn col s12">
-                    <span>Image 2</span>
-                    <input type="text" class="file-path col s10" readonly />
-                    <input type="file" name="image2" class="btn col s12" multiple/>
-                    <br>
-                </div>
-            </div>
-            
+        <div class="col-sm-4">
+
+        <div class="form-group">
+            <input type="file" name="images[]">
+            <table class="table table-bordered" id="dynamic_field"></table>
         </div>
+        <p>
+            <button type="button" name="add" id="add" class="btn btn-success">Ajouter des images</button>
+        </p>
+    </div>
 
         <div class="col s6">
             <p>Public</p>
@@ -133,17 +145,45 @@
             </div>
         </div>
 
-        <div class="col s6 right-align">
-            <br /><br />
-            <button class="btn" type="submit" name="post">Publier</button>
-        </div>
+            <div class="col s6 right-align">
+                <br /><br />
+                <button class="btn" type="submit" name="post">Publier</button>
+            </div>
 
     </div>
 
 
 
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+        $(document).ready(function(){
+            var i = 1;
+            $('#add').click(function(){
+                i++;
+                $('#dynamic_field').append('<tr id="row'+i+'"><td><div class="input-field col s12"><input type="file" name="images[]" class="hidden" id="duplicate"></div></td><td><button name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+            });
 
+            $(document).on('click','.btn_remove', function(){
+                var button_id = $(this).attr("id");
+                $("#row"+button_id+"").remove();
+            });
+
+            $('#submit').click(function(){
+                $.ajax({
+                    async: true,
+                    url: "#",
+                    method: "POST",
+                    data: $('#party').serialize(),
+                    success:function(rt)
+                    {
+                        alert(rt);
+                        $('#party')[0].reset();
+                    }
+                });
+            });
+        });
+    </script>
 <script src="js/ckeditor.js"></script>
 <script src="ckfinder/ckfinder.js"></script>
 <script>ClassicEditor
