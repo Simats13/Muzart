@@ -2,21 +2,25 @@
 //CREE UNE SESSION
     session_start();
 //CONNEXION A LA BASE DE DONNES 
+
+
+function GetDBConnection()
+{
     $dbhost  = 'localhost';
     $dbname  = 'perusat';
     $dbuser  = 'root';
     $dbpaswd = 'root';
-
     try{
         $db = new PDO('mysql:host='.$dbhost.';dbname='.$dbname,$dbuser,$dbpaswd,array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
     }catch(PDOexception $e){
         die("Une erreur est survenue lors de la connexion à la base de données");
     }
-
+    return $db;
+}
     //FONCTION SAVOIR SI L'UTILISATEUR EST UN ADMIN REVOIE SUR UNE PAGE SPECIFIQUE
 function admin(){
     if(isset($_SESSION['admin'])){
-        global $db;
+        $db = GetDBConnection();
         $a = [
             'email' => $_SESSION['admin'],
             'role'  => 'admin'
@@ -26,7 +30,8 @@ function admin(){
         $req = $db->prepare($sql);
         $req->execute($a);
         $exist = $req->rowCount($sql);
-
+        $req->closeCursor();
+        $db = null;
         return $exist;
     }else{
         return 0;
