@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<?
-$langue=0;
-	if(isset($_GET["lang"])){
+<?$langue=0;
+	if(isset($_GET["lang"]))
 	$langue=1;
 	$description = array("Isabelle Pérusat née à Montpellier, commence la musique à 5 ans , passe un vingtaine d'années à Paris , pianiste , compositrice , chanteuse , parcours classique , orientation pop music , photographe , création scénique , vidéo , cette artiste complète à plus d'une corde à son arc .
     Dans les années 90 , elle travaille avec le groupe «Eurythmics» en collaborant avec eux à la sortie d'un album .
@@ -13,8 +10,11 @@ $langue=0;
     $oeuvre= array("Oeuvres","Most popular");
 
     $populaire= array("les plus populaire","works");
-    }
     ?>
+    
+<!DOCTYPE html>
+<html lang="fr">
+
 
 <head>
 
@@ -175,6 +175,6 @@ $langue=0;
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-55234356-6');
+    gtag('config', 'UA-55234356-6'); 
 </script> 
 

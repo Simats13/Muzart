@@ -15,7 +15,6 @@ function get_images(){
         FROM image
         JOIN admin
         ON image.writter=admin.email
-   
         ORDER BY date DESC
         LIMIT 0,4
     
