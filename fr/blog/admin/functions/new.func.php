@@ -1,7 +1,7 @@
 <?php
 
 function is_modo($email,$token){
-    global $db;
+    $db = GetDBConnection();
 
     $a = [
         'email' =>  $email,
@@ -11,4 +11,6 @@ function is_modo($email,$token){
     $req= $db->prepare($sql);
     $req->execute($a);
     return $req->rowCount($sql);
+    $req->closeCursor();
+    $db = null;
 }

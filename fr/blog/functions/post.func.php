@@ -2,7 +2,8 @@
 
 //Création de la fonction permettant d'obtenir les posts 
 function get_post(){
-    global $db;
+    $db = GetDBConnection();
+    
 
     $req = $db->query("
         SELECT  posts.id,
@@ -20,12 +21,16 @@ function get_post(){
 
     $result = $req->fetchObject();
     return $result;
+    $req->closeCursor();
+    $db = null;
+
 
 }
 
 //Création de la fonction permettant d'obtenir les commentaires 
     function comment($name, $email, $comment){
-        global $db;
+        $db = GetDBConnection();
+    
 
         $c = array(
             'name'   => $name,
@@ -37,12 +42,14 @@ function get_post(){
         $sql = "INSERT INTO comments(name,email,comments,post_id,date) VALUES(:name, :email, :comment, :post_id, NOW())";
         $req = $db->prepare($sql);
         $req->execute($c);
-
+        $req->closeCursor();
+        $db = null;
     }
     
     function get_comments(){
 
-        global $db;
+        $db = GetDBConnection();
+    
         $req = $db->query("SELECT * FROM comments WHERE post_id = '{$_GET['id']}' ORDER BY date DESC");
         $results = [];
         while($rows = $req->fetchObject()){
@@ -50,7 +57,8 @@ function get_post(){
         }
     
         return $results;
-    
+        $req->closeCursor();
+        $db = null;
     
     }
 

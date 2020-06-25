@@ -1,17 +1,4 @@
-<?$langue=0;
-	if(isset($_GET["lang"]))
-	$langue=1;
-	$description = array("Isabelle Pérusat née à Montpellier, commence la musique à 5 ans , passe un vingtaine d'années à Paris , pianiste , compositrice , chanteuse , parcours classique , orientation pop music , photographe , création scénique , vidéo , cette artiste complète à plus d'une corde à son arc .
-    Dans les années 90 , elle travaille avec le groupe «Eurythmics» en collaborant avec eux à la sortie d'un album .
-    Isabelle fait du travail de recherche sur l'art vibratoire ( unir les émotions au travers de la musique ).","Isabelle Pérusat born in Montpellier, begins music at 5 years old, spends twenty years in Paris, pianist, composer, singer, classical career, pop music orientation, photographer, stage creation, video, this artist completes more than a string to her bow.
-    In the 90s , she worked with the band «Eurythmics» by collaborating with them on the release of an album .
-    Isabelle does research work on vibratory art (unite emotions through music).");
-
-    $oeuvre= array("Oeuvres","Most popular");
-
-    $populaire= array("les plus populaire","works");
-    ?>
-    
+ 
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -60,8 +47,8 @@
         <section class="white-bg">
            
         <div style="float:right;">
-					<a href="." target="_self"><img src="images/drapeau-francais.png" class="drapeau" /></a>
-					<a href="about.php?lang=1" target="_self"><img src="images/drapeau-anglais.png" class="drapeau" /></a>
+					<a href="?page=about" target="_self"><img src="images/drapeau-francais.png" class="drapeau" /></a>
+					<a href="?page=about.php?lang=en" target="_self"><img src="page/images/drapeau-anglais.png" class="drapeau" /></a>
 				</div>
 				</div>
 <!--Description Isabelle Pérusat + photo d'elle-->
@@ -71,7 +58,17 @@
                 
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="lead"> <?php echo $description[$langue]; ?> </p>
+                            <p class="lead"> 
+                                <?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Isabelle Pérusat née à Montpellier, commence la musique à 5 ans , passe un vingtaine d'années à Paris , pianiste , compositrice , chanteuse , parcours classique , orientation pop music , photographe , création scénique , vidéo , cette artiste complète à plus d'une corde à son arc .
+                                Dans les années 90 , elle travaille avec le groupe «Eurythmics» en collaborant avec eux à la sortie d'un album .
+                                Isabelle fait du travail de recherche sur l'art vibratoire ( unir les émotions au travers de la musique ).","Isabelle Pérusat born in Montpellier, begins music at 5 years old, spends twenty years in Paris, pianist, composer, singer, classical career, pop music orientation, photographer, stage creation, video, this artist completes more than a string to her bow.
+                                In the 90s , she worked with the band «Eurythmics» by collaborating with them on the release of an album .
+                                Isabelle does research work on vibratory art (unite emotions through music).");
+                            echo $description[$langue]; ?> 
+                            </p>
                             <p class="mt30"><a href="#contact" class="btn btn-primary btn-theme page-scroll">Contactez-moi</a></p>
                         </div>
 

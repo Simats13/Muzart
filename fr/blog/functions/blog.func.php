@@ -2,7 +2,8 @@
 
     function get_posts(){
 
-        global $db;
+        $db = GetDBConnection();
+
 
         $req = $db->query("SELECT * FROM posts WHERE posted='1' ORDER BY date DESC");
 
@@ -13,6 +14,9 @@
         }
 
         return $results;
+
+        $req->closeCursor();
+        $db = null;
 
     }
 

@@ -1,6 +1,7 @@
 <?php
 function email_taken($email){
-    global $db;
+    $db = GetDBConnection();
+
     $e = ['email' => $email];
     $sql = "SELECT * FROM admin WHERE email =:email";
     $req = $db->prepare($sql);
@@ -8,6 +9,8 @@ function email_taken($email){
     $free= $req->rowCount($sql);
 
     return $free;
+    $req->closeCursor();
+    $db = null;
 }
 
 function token($length){
@@ -16,7 +19,8 @@ function token($length){
 }
 
 function add_modo($name,$email,$role,$token){
-    global $db;
+    $db = GetDBConnection();
+
 
     $m= [
         'name'      =>  $name,
@@ -51,10 +55,14 @@ function add_modo($name,$email,$role,$token){
 
     mail($email,$subject,$message,$header);
 
+    $req->closeCursor();
+    $db = null;
+
 }
 
 function get_modos(){
-    global $db;
+    $db = GetDBConnection();
+
 
     $req = $db->query("
         SELECT * FROM admin
@@ -66,4 +74,8 @@ function get_modos(){
          $results[] = $rows;
      }
      return $results;
+
+     $req->closeCursor();
+
+     $db = null;
 }

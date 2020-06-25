@@ -19,7 +19,7 @@
     }
 
     function get_posts(){
-        global $db;
+        $db = GetDBConnection();
     
         $req = $db->query("
     
@@ -45,6 +45,8 @@
         }
     
         return $results;
+        $db->closeCursor();
+        $db = null;
     
     }
 

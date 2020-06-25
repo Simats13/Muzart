@@ -2,7 +2,8 @@
 
 function get_post(){
 
-    global $db;
+    $db = GetDBConnection();
+
 
     $req = $db->query("
         SELECT  posts.id,
@@ -20,11 +21,14 @@ function get_post(){
 
     $result = $req->fetchObject();
     return $result;
+    $req->closeCursor();
+    $db = null;
 }
 
 function edit($title,$content,$posted,$id){
 
-    global $db;
+    $db = GetDBConnection();
+
 
     $e = [
         'title'     => $title,
@@ -36,5 +40,7 @@ function edit($title,$content,$posted,$id){
     $sql = "UPDATE posts SET title=:title, content=:content, date=NOW(), posted=:posted WHERE id=:id";
     $req = $db->prepare($sql);
     $req->execute($e);
+    $req->closeCursor();
+    $db = null;
 
 }

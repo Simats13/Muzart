@@ -1,6 +1,6 @@
 <?php
 function recevoir($name,$email,$message){
-    global $db;
+    $db = GetDBConnection();
 
     $p = [
         'name'   => $name,
@@ -11,6 +11,8 @@ function recevoir($name,$email,$message){
     $sql = "INSERT INTO contacts(name, email, message,date) VALUES (:name,:email,:message,NOW())" ;
     $req = $db->prepare($sql);
     $req->execute($p);
+    $req->closeCursor();
+    $db=null;
 }
 
 ?>

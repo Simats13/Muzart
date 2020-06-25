@@ -1,7 +1,8 @@
 <?php 
 
 function get_posts(){
-    global $db;
+    $db = GetDBConnection();
+
 
     $req = $db->query("
 
@@ -27,6 +28,9 @@ function get_posts(){
     }
 
     return $results;
+
+    $req->closeCursor();
+    $db = null;
 
 }
 

@@ -1,9 +1,11 @@
 <?php
 
 function inTable($table){
-    global $db;
+    $db = GetDBConnection();
     $query = $db->query("SELECT COUNT(id) FROM $table");
     return $nombre = $query->fetch();
+    $req->closeCursor();
+    $db = null;
 }
 
 function getColor($table,$colors){
@@ -17,7 +19,8 @@ function getColor($table,$colors){
 }
 
 function get_contacts(){
-    global $db;
+
+    $db = GetDBConnection();
 
     $req = $db->query("
         SELECT  contacts.id,
@@ -35,10 +38,12 @@ function get_contacts(){
     }
 
     return $result;
+    $req->closeCursor();
+    $db = null;
 }
 
 function get_admin(){
-    global $db;
+    $db = GetDBConnection();
 
     $req = $db->query("
         SELECT  admin.id,
@@ -56,5 +61,7 @@ function get_admin(){
     }
 
     return $result;
+    $req->closeCursor();
+    $db = null;
 
 }

@@ -1,6 +1,6 @@
 <?php
 function get_contact(){
-    global $db;
+    $db = GetDBConnection();
 
     $req = $db->query("SELECT * FROM contacts ");
 
@@ -11,6 +11,8 @@ function get_contact(){
     }
 
     return $results;
+    $db->closeCursor();
+    $db = null;
 
 }
 ?>

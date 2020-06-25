@@ -1,9 +1,13 @@
 <?php
 
 function inTable($table){
-    global $db;
+    $db = GetDBConnection();
+
     $query = $db->query("SELECT COUNT(id) FROM $table");
     return $nombre = $query->fetch();
+
+    $query->closeCursor();
+    $db = null;
 }
 
 function getColor($table,$colors){
@@ -17,7 +21,8 @@ function getColor($table,$colors){
 }
 
 function get_comments(){
-    global $db;
+    $db = GetDBConnection();
+
 
     $req = $db->query("
         SELECT  comments.id,
@@ -41,11 +46,14 @@ function get_comments(){
     }
 
     return $result;
+    $req->closeCursor();
+    $db = null;
 }
 
 //Création de la fonction permettant d'obtenir les posts 
 function get_post(){
-    global $db;
+    $db = GetDBConnection();
+
 
     $req = $db->query("
         SELECT  admin.name
@@ -55,4 +63,7 @@ function get_post(){
 
     $result = $req->fetchObject();
     return $result;
+
+    $req->closeCursor();
+    $db = null;
 }

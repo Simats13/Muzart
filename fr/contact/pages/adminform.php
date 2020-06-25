@@ -27,5 +27,9 @@ foreach($contact as $contacts):?>
     </div>
   </div>
 
-<?php endforeach?>
+<?php endforeach
+  $db->closeCursor();
+  $db= null;
+
+?>
 </div>

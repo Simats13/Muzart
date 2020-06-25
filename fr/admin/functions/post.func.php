@@ -2,7 +2,8 @@
 
 function get_post(){
 
-    global $db;
+    $db = GetDBConnection();
+
 
     $req = $db->query("
         SELECT  posts.id,
@@ -20,6 +21,8 @@ function get_post(){
 
     $result = $req->fetchObject();
     return $result;
+    $req->closeCursor();
+    $db = null;
 }
 
 function edit($title,$content,$posted,$id){

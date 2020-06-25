@@ -2,7 +2,7 @@
 
 function post($title,$content,$posted){
 
-    global $db;
+    $db = GetDBConnection();
 
     $p = [
         'title'   => $title,
@@ -15,10 +15,12 @@ function post($title,$content,$posted){
 
     $req = $db->prepare($sql);
     $req->execute($p);
+    $req->closeCursor();
+    $db = null;
 }
 
 function post_img($tmp_name, $extension){
-    global $db;
+    $db = GetDBConnection();
     $id = $db->lastInsertId();
     $i = [
         'id'    =>  $id,
@@ -30,4 +32,6 @@ function post_img($tmp_name, $extension){
     $req->execute($i);
     move_uploaded_file($tmp_name,"../img/posts/".$id.$extension);
     header("Location:index.php?page=post&id=".$id);
+    $req->closeCursor();
+    $db = null;
 }

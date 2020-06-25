@@ -1,7 +1,8 @@
 <?php
 
 function is_admin($email,$password){
-    global $db;
+    $db = GetDBConnection();
+
 
     $a = [
         'email' => $email,
@@ -14,6 +15,8 @@ function is_admin($email,$password){
     $req->execute($a);
     $exist = $req->rowCount($sql);
     return $exist;
+    $req->closeCursor();
+    $db = null;
 
 }
 

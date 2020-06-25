@@ -2,7 +2,7 @@
 //PERTMET DE RECUPERER TOUS LES POSTS DANS LA BASE DE DONNÉES 
 function get_posts(){
     //ACCEDE A LA BASE DE DONNÈES FICHIER MAIN FUNCTION
-    global $db;
+    $db = GetDBConnection();
 
     $req = $db->query("
 
@@ -28,6 +28,8 @@ function get_posts(){
     }
     //AFFICHE LE TABLEAU
     return $results;
+    $req->closeCursor();
+    $db = null;
 
 }
 

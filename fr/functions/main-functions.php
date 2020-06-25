@@ -9,7 +9,7 @@ function GetDBConnection()
     $dbhost  = 'localhost';
     $dbname  = 'perusat';
     $dbuser  = 'root';
-    $dbpaswd = 'root';
+    $dbpaswd = '';
     try{
         $db = new PDO('mysql:host='.$dbhost.';dbname='.$dbname,$dbuser,$dbpaswd,array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
     }catch(PDOexception $e){
@@ -45,6 +45,8 @@ function hasnt_password(){
     $req = $db->prepare($sql);
     $req->execute();
     $exist = $req->rowCount($sql);
+    $req->closeCursor();
+    $db = null;
     return $exist;
 }
 

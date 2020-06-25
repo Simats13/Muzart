@@ -1,6 +1,7 @@
 <?php
 function update_password($password){
-    global $db;
+    $db = GetDBConnection();
+
 
     $p = [
 
@@ -10,4 +11,6 @@ function update_password($password){
     $sql = "UPDATE admin SET password=:password WHERE email='{$_SESSION['admin']}'";
     $req = $db->prepare($sql);
     $req->execute($p);
+    $req->closeCursor();
+    $db = null;
 }
