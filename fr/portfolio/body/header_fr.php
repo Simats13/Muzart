@@ -56,14 +56,14 @@
                             <a href="../?">Accueil</a>
                         </li>
                         <li class="dropdown" role="menu">
-                            <a href="../?page=portfolio">Portfolio</a>
+                            <a href="?">Portfolio</a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="../?page=photo">Étude Photographique</a></li>
                                 <li><a href="../?page=video">Art Vidéos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="?">Blog</a>
+                            <a href="../blog/">Blog</a>
                         </li>
                         <li class="dropdown">
                             <a href="../?page=about">À Propos</a>
@@ -77,14 +77,14 @@
                         </li>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" style="background-color: grey; margin-right:10vw">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand smoothie logo logo-light" href="../index.php"><img src="../assets/img/logo.png" alt="logo"></a>
-                    <a class="navbar-brand smoothie logo logo-dark" href="../index.php"><img src="../assets/img/logo_reverse.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-light hidden" href="../index.php"><img src="../assets/img/logo.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark hidden" href="../index.php"><img src="../assets/img/logo_reverse.png" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

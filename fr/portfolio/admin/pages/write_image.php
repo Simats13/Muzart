@@ -2,18 +2,17 @@
 <h2>Poster des images</h2>
 
 <?php
+$db = GetDBConnection();
 
-
-if(isset($_POST['post'])){
-    //RECUPERE LES VARIABLES
-    $title = htmlspecialchars(trim($_POST['title']));
-    $content = (trim($_POST['content']));
-    $category_id = $db->quote($_POST['category_id']);
+if(isset($_POST['post']) ){
+    
+    
+    $title = $_POST['name'];
+    $category_id = $_POST['category_id'];
+    $content = $_POST['content'];
     $posted = isset($_POST['public']) ? "1" : "0";
-
     $errors = [];
 
-//AFFICHE LES ERREURS 
     if(empty($title) || empty($content)){
         $errors['empty'] = "Veuillez remplir tous les champs";
     }
@@ -28,49 +27,81 @@ if(isset($_POST['post'])){
         }
     }
 
-    if(!empty($errors)){
-        ?>
-<div class="card red">
-<div class="card-content white-text">
-    <?php
-                        foreach($errors as $error){
-                            echo $error."<br/>";
-                        }
-                    ?>
-</div>
-</div>
-<?php
-    }else{
-        post($title,$content,$category_id,$posted);
-        if(!empty($_FILES['images']['name'])){
-                        /**
-            * ENVOIS DES IMAGES
-            **/
-            $work_id = $db->lastInsertId();
-            $files = $_FILES['images'];
-            $images = array();
+ 
+ 
+    
+    
+    
+        /**
+        * SAUVEGARDE de la réalisation
+        **/
 
-            foreach($files['tmp_name'] as $k => $v){
-                $image = array(
-                    'name' => $files['name'][$k],
-                    'tmp_name' => $files['tmp_name'][$k]
-                );
+        $p = [
+            'title'   => $title,
+            'content' => $content,
+            'writter' => $_SESSION['admin'],
+            'category_id' => $category_id,
+            'posted'  => $posted
+        ];
+    
+        $sql = "INSERT INTO portfolio(title,content,writter,date,category_id,posted) VALUES(:title,:content,:writter,NOW(),:category_id,:posted)";
+    
+        $req = $db->prepare($sql);
+        $req->execute($p);
+        $_GET['id'] = $db->lastInsertId();
 
-                $extension = pathinfo($image['name'], PATHINFO_EXTENSION);
-                if(in_array($extension, array('jpg','png'))){
-                    $db->query("INSERT INTO image SET image_id=$work_id");
-                    $image_id = $db->lastInsertId();
-                    $image_name = $image_id . '.' . $extension;
-                    move_uploaded_file($image['tmp_name'],'../img/posts/' . $image_name);
-                    $image_name = $db->quote($image_name);
-                    $db->query("UPDATE image SET name=$image_name WHERE id = $image_id");
-                }
+        if(!empty($_FILES['image']['name'])){
+            
+
+           
+            $fichier = $_FILES['image'];
+            
+            $pictures = array();
+            $picture = array(
+                'name' => $fichier['name'],
+                'tmp_name' => $fichier['tmp_name']
+            );
+    
+             $extension = pathinfo($picture['name'], PATHINFO_EXTENSION);
+            if(in_array($extension, array('jpg','png'))){
+                $image_id = $db->lastInsertId();
+                $image_name = "Head_".$image_id . '.' . $extension;
+                move_uploaded_file($picture['tmp_name'], '../img/posts/' . $image_name);
+                resizeImage('../img/posts/' . $image_name, 300,300);
+                $db->query("UPDATE portfolio SET image='$image_name' WHERE id = '$image_id' ");
             }
-        }else{
-            $id = $db->lastInsertId();
-            header("Location:index.php?page=post&id=".$id);
         }
-    }
+
+        /**
+        * ENVOIS DES IMAGES
+        **/
+        $work_id = $_GET['id'];
+        $files = $_FILES['images'];
+        $images = array();
+
+        foreach($files['tmp_name'] as $k => $v){
+            $image = array(
+                'name' => $files['name'][$k],
+                'tmp_name' => $files['tmp_name'][$k]
+            );
+            $extension = pathinfo($image['name'], PATHINFO_EXTENSION);
+            if(in_array($extension, array('jpg','png'))){
+                $db->query("INSERT INTO images SET work_id=$work_id");
+                $image_id = $db->lastInsertId();
+                $image_name = $image_id . '.' . $extension;
+                move_uploaded_file($image['tmp_name'], '../img/posts/' . $image_name);
+                resizeImage('../img/posts/' . $image_name, 300,300);
+                $image_name = $db->quote($image_name);
+                $db->query("UPDATE images SET name=$image_name WHERE id = $image_id");
+            }
+        }
+
+        $id = $db->lastInsertId();
+        header("Location:?page=post_image&id=".$id);
+        die();
+
+
+
 }
 
        /**
@@ -106,32 +137,49 @@ if(isset($_POST['post'])){
 
 <form method="post" enctype="multipart/form-data">
     <div class="row">
-        <div class="input-field col s12">
-            <input type="text" name="title" id="title" />
-            <label for="title">Titre de l'article</label>
-        </div>
+        
+            <div class="form-group">
+                <label for="name">Nom de la réalisation</label>
+                <?= input('name'); ?>
+            </div>
 
-        <div class="input-field col s12">
-            <textarea name="content" id="content" class="materialize-textarea" placeholder="Contenu de l'article"></textarea>
-            <label for="content"></label>
-        </div>
+            <div class="form-group">
+                <label for="content">Contenu de la réalisation</label>
+                <?= textarea('content'); ?>
+            </div>
 
         <div class="form-group input-field col s12">
                 <?= select('category_id', $categories_list); ?>
                 <label for="category_id">Catégorie</label>
         </div>
+        
+
+
 
 
         <div class="col-sm-4">
 
-        <div class="form-group">
-            <input type="file" name="images[]">
-            <table class="table table-bordered" id="dynamic_field"></table>
+            <div class="form-group">
+            <br>
+            
+                <input type="file" name="images[]">
+                <input type="file" name="images[]" class="hide" id="duplicate">
+            </div>
+            <p>
+                <a href="#" class="btn btn-success" id="duplicatebtn">Ajouter une image</a>
+            </p>
+        
         </div>
-        <p>
-            <button type="button" name="add" id="add" class="btn btn-success">Ajouter des images</button>
-        </p>
-    </div>
+
+        <div class="col s12">
+            <div class="input-field file-field">
+                <div class="btn col s12">
+                    <span>Image de l'article</span>
+                    <input type="text" class="file-path col s10" readonly />
+                    <input type="file" name="image" class="btn col s12" />
+                </div>
+            </div>
+        </div>
 
         <div class="col s6">
             <p>Public</p>
@@ -157,33 +205,17 @@ if(isset($_POST['post'])){
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
-        $(document).ready(function(){
-            var i = 1;
-            $('#add').click(function(){
-                i++;
-                $('#dynamic_field').append('<tr id="row'+i+'"><td><div class="input-field col s12"><input type="file" name="images[]" class="hidden" id="duplicate"></div></td><td><button name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
-            });
+(function($){
 
-            $(document).on('click','.btn_remove', function(){
-                var button_id = $(this).attr("id");
-                $("#row"+button_id+"").remove();
-            });
+    $('#duplicatebtn').click(function(e){
+        e.preventDefault();
+        var $clone = $('#duplicate').clone().attr('id', '').removeClass('hide');
+        $('#duplicate').before($clone);
+    })
 
-            $('#submit').click(function(){
-                $.ajax({
-                    async: true,
-                    url: "#",
-                    method: "POST",
-                    data: $('#party').serialize(),
-                    success:function(rt)
-                    {
-                        alert(rt);
-                        $('#party')[0].reset();
-                    }
-                });
-            });
-        });
-    </script>
+
+})(jQuery);
+</script>
 <script src="js/ckeditor.js"></script>
 <script src="ckfinder/ckfinder.js"></script>
 <script>ClassicEditor

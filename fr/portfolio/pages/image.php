@@ -28,12 +28,21 @@ $images = get_picture();
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 mt30 wow text-center">
-                            <h2 class="section-heading" style="margin-bottom:100px">ETUDE PHOTOGRAPHIQUE</h2>
+                            <h2 class="section-heading" style="margin-bottom:100px"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("ETUDE PHOTOGRAPHIQUE","PHOTOGRAPHIC STUDY");
+                            echo $description[$langue]; ?></h2>
                         </div>
                     </div>
                 </div>
             </div>
 </section>
+
+<div style="float:right;">
+					<a href="?page=photo" target="_self"><img src="images/drapeau-francais.png" class="drapeau" /></a>
+					<a href="?page=photo&lang=en" target="_self"><img src="fr/pages/images/drapeau-anglais.png" class="drapeau" /></a>
+				</div>
 
         <section class="white-bg" style="margin-top:100px">
             <div class="section-inner">
@@ -41,11 +50,31 @@ $images = get_picture();
                     <div class="row">
                         <div class="col-md-12 text-center mb50">
                             <ul class="portfolio-filter mb30 list-inline wow">
-                                <li><a class="btn btn-primary active" href="#" data-filter="*">Tout</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".photography">Photos</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".portrait">Portrait</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".paysage">Paysage</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".paysage">Exposition</a></li>
+                                <li><a class="btn btn-primary active" href="#" data-filter="*"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Tout","All");
+                            echo $description[$langue]; ?></a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".photography"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Photos","Photos");
+                            echo $description[$langue]; ?></a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".portrait"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Portrait","Portrayal");
+                            echo $description[$langue]; ?></a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".paysage"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Paysage","Landscape");
+                            echo $description[$langue]; ?></a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".paysage"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Expositions","Exposition");
+                            echo $description[$langue]; ?></a></li>
                             </ul>
                         </div>
                     </div>
@@ -64,7 +93,11 @@ $images = get_picture();
                                     <div class="vertical-center smoothie">
                                         <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project"><?=$image->title?></a></h3>
                                         <a href="img/posts/<?= $image->image?>" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                        <a href="index.php?page=post&id=<?= $image->id ?>" class="smoothie btn btn-primary">Visionner</a>
+                                        <a href="index.php?page=post&id=<?= $image->id ?>" class="smoothie btn btn-primary"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Visionner","See");
+                            echo $description[$langue]; ?></a>
                                     </div>
                                 </div>
                             </li>

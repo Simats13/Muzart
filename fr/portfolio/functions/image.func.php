@@ -1,7 +1,7 @@
 <?php 
 
 function get_picture(){
-    global $db;
+    $db = GetDBConnection();
 
     $req = $db->query("
 

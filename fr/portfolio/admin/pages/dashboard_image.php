@@ -11,14 +11,14 @@ $post = get_post();
 <div class="row">
     <?php 
         $tables = [
-            "Publications" => "image",
+            "Publications" => "portfolio",
             "Commentaires" => "comments",
             "Administrateurs" => "admin"   
 
         ];
 
         $colors = [
-            "image" => "blue-grey",
+            "portfolio" => "blue-grey",
             "comments" => "red",
             "admin" => "blue"
         ];

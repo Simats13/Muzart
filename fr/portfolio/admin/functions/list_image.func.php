@@ -2,9 +2,9 @@
 
 function get_images(){
 
-    global $db;
+    $db = GetDBconnection();
 
-    $req = $db->query("SELECT * FROM image  ORDER BY date DESC");
+    $req = $db->query("SELECT * FROM portfolio  ORDER BY date DESC");
 
     $results = [];
 

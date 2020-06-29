@@ -60,7 +60,7 @@ if(hasnt_password()== 1){
                 </div>
 
                 <center>
-                    <a href="?page=dashboard_video">Administration VIDEO </a>
+                    <a href="index_video.php?page=dashboard_video">Administration VIDEO </a>
                 </center>
         </div>
         

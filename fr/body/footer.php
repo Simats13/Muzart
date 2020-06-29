@@ -21,13 +21,29 @@ $posts = get_posts();
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="widget about-us-widget">
-                                    <h4 class="widget-title"><strong>Global</strong> Coverage</h4>
+                                    <h4 class="widget-title"><strong><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Ouverture ","Global ");
+                            echo $description[$langue]; ?></strong><?php $langue=0;
+                            if(isset($_GET["lang"]))
+                            $langue=1;
+                            $description = array("Mondiale","Coverage");
+                        echo $description[$langue]; ?></h4>
                                     <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="widget">
-                                    <h4 class="widget-title"><strong>Dernier</strong> Articles</h4>
+                                    <h4 class="widget-title"><strong><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Dernier","Last");
+                            echo $description[$langue]; ?></strong> <?php $langue=0;
+                            if(isset($_GET["lang"]))
+                            $langue=1;
+                            $description = array("Articles","Articles");
+                        echo $description[$langue]; ?></h4>
                                     <div>
                                         <?php foreach($posts as $post){ ?>
                                         <div class="media">
@@ -36,7 +52,11 @@ $posts = get_posts();
                                             </div>
                                             <div class="media-body">
                                                 <span class="media-heading"><a href="blog/index.php?page=post&id=<?= $post->id ?>"><?= $post->title ?></a></span>
-                                                <small class="muted">Posté le <?= date("d/m/Y à H:i",strtotime($post->date)); ?></small>
+                                                <small class="muted"><?php $langue=0;
+                                                    if(isset($_GET["lang"]))
+                                                    $langue=1;
+                                                    $description = array("Posté le","Posted in");
+                                                echo $description[$langue]; ?> <?= date("d/m/Y à H:i",strtotime($post->date)); ?></small>
                                             </div>
                                         </div>
                                         <?php } ?>

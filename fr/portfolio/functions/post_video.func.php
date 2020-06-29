@@ -2,7 +2,7 @@
 
 //Création de la fonction permettant d'obtenir les vidéos 
 function get_video(){
-    global $db;
+    $db = GetDBConnection();
 
     $req = $db->query("
         SELECT  video.id,
@@ -26,7 +26,7 @@ function get_video(){
 
 //Création de la fonction permettant d'obtenir les commentaires 
     function comment($name, $email, $comment){
-        global $db;
+        $db = GetDBConnection();
 
         $c = array(
             'name'   => $name,
@@ -43,7 +43,7 @@ function get_video(){
     
     function get_comments(){
 
-        global $db;
+        $db = GetDBConnection();
         $req = $db->query("SELECT * FROM comments WHERE post_id = '{$_GET['id']}' ORDER BY date DESC");
         $results = [];
         while($rows = $req->fetchObject()){

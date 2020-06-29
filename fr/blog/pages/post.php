@@ -40,7 +40,7 @@ if($post == false){
                         <!--AFFICHE LE CONTENU DE L'ARTICLE SELON l'ID -->
                             <p><?= nl2br($post->content); ?></p>
 
-                            <div data-easyshare data-easyshare-url="http://www.distinctivethemes.com/">
+                            <div data-easyshare data-easyshare-url="#">
                                 <!-- Total -->
                                 <button data-easyshare-button="total">
                                     <span>Total</span>
@@ -49,21 +49,16 @@ if($post == false){
 
                                 <!-- Facebook -->
                                 <button data-easyshare-button="facebook">
-                                    <span>Share</span>
+                                    <span>Partager sur Facebook</span>
                                 </button>
                                 <span data-easyshare-button-count="facebook">0</span>
 
                                 <!-- Twitter -->
                                 <button data-easyshare-button="twitter" data-easyshare-tweet-text="">
-                                    <span>Tweet</span>
+                                    <span>Tweeter</span>
                                 </button>
                                 <span data-easyshare-button-count="twitter">0</span>
 
-                                <!-- Google+ -->
-                                <button data-easyshare-button="google">
-                                    <span>+1</span>
-                                </button>
-                                <span data-easyshare-button-count="google">0</span>
 
                                 <div data-easyshare-loader>Loading...</div>
                             </div>

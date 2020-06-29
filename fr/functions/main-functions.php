@@ -9,7 +9,7 @@ function GetDBConnection()
     $dbhost  = 'localhost';
     $dbname  = 'perusat';
     $dbuser  = 'root';
-    $dbpaswd = '';
+    $dbpaswd = 'root';
     try{
         $db = new PDO('mysql:host='.$dbhost.';dbname='.$dbname,$dbuser,$dbpaswd,array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
     }catch(PDOexception $e){
@@ -39,7 +39,7 @@ function admin(){
 }
 //FONCTION S'IL N'A PAS DE MOT DE PASSE RENVOIE SUR UNE PAGE SPECIFIQUE
 function hasnt_password(){
-    global $db;
+    $db = GetDBConnection();
 
     $sql = "SELECT * FROM admin WHERE email = '{$_SESSION['admin']}' AND password = ''";
     $req = $db->prepare($sql);

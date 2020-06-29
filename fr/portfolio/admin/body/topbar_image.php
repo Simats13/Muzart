@@ -14,7 +14,7 @@
                         <?php 
                             if( admin()==1){
                                 ?>
-                                    <li class="<?php echo ($page=="settings")?"active" : ""; ?>"><a href="index_image.php?page=settings"><i class="material-icons">settings</i></a></li>
+                                    <li class="<?php echo ($page=="settings")?"active" : ""; ?>"><a href="../../admin/index.php?page=settings"><i class="material-icons">settings</i></a></li>
                                 <?php
                             }
                         ?>                       
@@ -30,7 +30,7 @@
                         <?php 
                             if( admin()==1){
                             ?>
-                                <li class="<?php echo ($page=="settings")?"active" : ""; ?>"><a href="index_image.php?page=settings">Paramètres</a></li>
+                                <li class="<?php echo ($page=="settings")?"active" : ""; ?>"><a href="../../admin/index.php?page=settings">Paramètres</a></li>
                             <?php
                             }
                         ?>

@@ -1,7 +1,9 @@
 <?php 
 $videos = get_videos();
 
-$images = get_images();
+$images = get_portfolios();
+
+$get_image = get_image();
 
 
 ?>
@@ -37,15 +39,38 @@ $images = get_images();
             </div>
         </section>
 
+        <div style="float:right;">
+					<a href="?page=portfolio" target="_self"><img src="images/drapeau-francais.png" class="drapeau" /></a>
+					<a href="?page=portfolio&lang=en" target="_self"><img src="fr/pages/images/drapeau-anglais.png" class="drapeau" /></a>
+				</div>
+
         <section class="white-bg">
             <div class="section-inner">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center mb50">
                             <ul class="portfolio-filter mb30 list-inline wow">
-                                <li><a class="btn btn-primary active" href="#" data-filter="*">Toutes les oeuvres</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".photo">Etude Photographique</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".video">Art Video</a></li>
+                                <li><a class="btn btn-primary active" href="#" data-filter="*">
+                                <?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Toutes les oeuvres","All works");
+                            echo $description[$langue]; ?></a></li>
+
+
+                                <li><a class="btn btn-primary" href="#" data-filter=".photo">
+                                <?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Etude Photographique","Photographic Study");
+                            echo $description[$langue]; ?></a></li>
+
+
+                                <li><a class="btn btn-primary" href="#" data-filter=".video"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Art Video","Video Art");
+                            echo $description[$langue]; ?></a></li>
                             </ul>
                         </div>
                     </div>
@@ -65,12 +90,12 @@ $images = get_images();
                             ?>
                             <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr photo isotope-item">
                                 <div class="hover-item">
-                                    <img src="img/posts/<?= $image->image?>" class="img-responsive smoothie" alt="">
+                                    <img src="img/posts/<?= $image->image ?>" class="img-responsive smoothie" alt="">
                                     <div class="overlay-item-caption smoothie"></div>
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
                                             <h3 class="smoothie mb30"><a href="?page=post_image&id=<?= $image->id ?>" title="view project"><?= $image->title ?></a></h3>
-                                            <a href="img/posts/<?= $image->image?>" title="View Gallery" class="btn btn-primary lb-link smoothie">Visionner</a>
+                                            <a href="img/posts/<?= $image->image ?>" title="View Gallery" class="btn btn-primary lb-link smoothie">Visionner</a>
                                             <a href="?page=post_image&id=<?= $image->id ?>" class="smoothie btn btn-primary">En savoir plus</a>
                                         </div>
                                     </div>

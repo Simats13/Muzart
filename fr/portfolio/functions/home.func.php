@@ -1,20 +1,20 @@
 <?php 
 
-function get_images(){
-    global $db;
+function get_portfolios(){
+    $db = GetDBConnection();
 
     $req = $db->query("
 
-        SELECT  image.id,
-                image.title,
-                image.content,
-                image.writter,
-                image.image,
-                image.date,
+        SELECT  portfolio.id,
+                portfolio.title,
+                portfolio.content,
+                portfolio.writter,
+                portfolio.date,
+                portfolio.image,
                 admin.name
-        FROM image
+        FROM portfolio
         JOIN admin
-        ON image.writter=admin.email
+        ON portfolio.writter=admin.email
         ORDER BY date DESC
         LIMIT 0,4
     
@@ -31,7 +31,7 @@ function get_images(){
 }
 
 function get_videos(){
-    global $db;
+    $db = GetDBConnection();
 
     $req = $db->query("
 
@@ -64,7 +64,10 @@ function get_videos(){
 
 }
 
-
+function get_image(){
+    $db = GetDBConnection();
+    $req = $db->query("SELECT * FROM images"); 
+}
 
 ?>
                

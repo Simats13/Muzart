@@ -40,7 +40,7 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
 
                 <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation" style="background-color: grey; margin-right:10vw">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -56,7 +56,7 @@
                             <a href="../?">Accueil</a>
                         </li>
                         <li class="dropdown" role="menu">
-                            <a href="../?page=portfolio">Portfolio</a>
+                            <a href="../portfolio">Portfolio</a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="../?page=photo">Étude Photographique</a></li>
                                 <li><a href="../?page=video">Art Vidéos</a></li>
@@ -71,20 +71,17 @@
                         <li class="dropdown">
                             <a href="../?page=contact">Contact</a>
                         </li>
-                        <li class="dropdown">
-                        <li><a href="#search"><i class="pe-7s-search"></i></a></li>
-                        <li><a href="javascript:void(0);" class="side-menu-trigger hidden-xs"><i class="fa fa-bars"></i></a></li>
-                        </li>
+
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                <div class="navbar-header page-scroll" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" style="background-color: grey; margin-right:10vw" >
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand smoothie logo logo-light" href="../index.php"><img src="../assets/img/logo.png" alt="logo"></a>
-                    <a class="navbar-brand smoothie logo logo-dark" href="../index.php"><img src="../assets/img/logo_reverse.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-light hidden" href="../index.php"><img src="../assets/img/logo.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark hidden" href="../index.php"><img src="../assets/img/logo_reverse.png" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,15 +94,6 @@
             <!-- /.container-fluid -->
         </nav>
 
-        <div id="search-wrapper">
-            <button type="button" class="close">×</button>
-            <div class="vertical-center text-center">
-                <form>
-                    <input type="search" value="" placeholder="Rechercher un terme" />
-                    <button type="submit" class="btn btn-primary btn-white">Rechercher</button>
-                </form>
-            </div>
-        </div>
 
         <div class="flexpanel">
         <div class="viewport-wrap">

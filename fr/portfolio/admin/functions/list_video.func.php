@@ -2,7 +2,7 @@
 
 function get_videos(){
 
-    global $db;
+    $db = GetDBConnection();
 
     $req = $db->query("SELECT * FROM video  ORDER BY date DESC");
 

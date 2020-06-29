@@ -1,10 +1,19 @@
 <?php 
 //RECUPERE LES POSTS DEPUIS LA BDD
+$db = GetDBConnection();
 $images = get_picture();
-//SI LE POST N'EXISTE PAS RETOURNE SUR LA PAGE ERROR
-if($images == false){
-    header("Location:index.php?page=error");
-}else{
+$category = category();
+
+
+
+$works = $db->query("
+    SELECT portfolio.title, portfolio.id, portfolio.image_id, images.name as image_name
+    FROM portfolio
+    JOIN images ON images.work_id = portfolio.id
+")->fetchAll();
+
+
+
     ?>
 
 <body id="page-top" class="index">
@@ -39,24 +48,39 @@ if($images == false){
 </section>
         </header>
 
+        
+        <header>
+       
+            <ul class="owl-carousel-paged wow fadeIn list-unstyled post-slider" data-items="3" data-items-desktop="[1200,3]" data-items-desktop-small="[980,3]" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
+            <?php foreach ($works as $work): ?>
+                <li>
+                    <div class="hover-item mb30 post-slide">
+                        <img src="img/posts/<?= resizedName($work['image_name'], 300, 300)?>" class="img-responsive smoothie" alt="title" >
+                    </div>
+                    
+                </li>
+                <?php endforeach ?>
+            </ul>
+            
+        </header>
         <section>
             <div class="section-inner">
                 <div class="container pad-sides-120">
                     <div class="row project-item wow">
                         <div class="col-sm-9">
                             <p><?= $images->content?></p>
-                            <p>Behind sooner dining so window excuse he summer. Breakfast met certainty and fulfilled propriety led. Waited get either are wooded little her. Contrasted unreserved as mr particular collecting it everything as indulgence. Seems ask meant merry could put. Age old begin had boy noisy table front whole given.</p>
                         </div>
                         <div class="col-sm-3">
                             <p><strong>DATE:</strong> <?= $images->date?></p>
                             <p><strong>AUTEUR:</strong> <?= $images->name?></p>
-                            <p><strong>CATEGORIE:</strong> <?= $images->category?></p>
+                            <p><strong>CATEGORIE:</strong> </p>
                             <p class="mt30"><a href="../?page=contact" class="btn btn-primary btn-theme page-scroll">Contacter</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
 
 <section>
@@ -69,7 +93,7 @@ if($images == false){
                         <!--AFFICHE LE CONTENU DE L'ARTICLE SELON l'ID -->
                            
 
-                            <div data-easyshare data-easyshare-url="http://www.distinctivethemes.com/">
+                            <div data-easyshare data-easyshare-url="#">
                                 <!-- Total -->
                                 <button data-easyshare-button="total">
                                     <span>Total</span>
@@ -78,21 +102,16 @@ if($images == false){
 
                                 <!-- Facebook -->
                                 <button data-easyshare-button="facebook">
-                                    <span>Share</span>
+                                    <span>Partager</span>
                                 </button>
                                 <span data-easyshare-button-count="facebook">0</span>
 
                                 <!-- Twitter -->
                                 <button data-easyshare-button="twitter" data-easyshare-tweet-text="">
-                                    <span>Tweet</span>
+                                    <span>Tweeter</span>
                                 </button>
                                 <span data-easyshare-button-count="twitter">0</span>
 
-                                <!-- Google+ -->
-                                <button data-easyshare-button="google">
-                                    <span>+1</span>
-                                </button>
-                                <span data-easyshare-button-count="google">0</span>
 
                                 <div data-easyshare-loader>Loading...</div>
                             </div>
@@ -208,12 +227,12 @@ if($images == false){
             </div>
      </section>
 
-<?php }?>
+
 
     
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-    
+    <script src="../assets/js/plugins.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="../assets/js/init.js"></script>
 

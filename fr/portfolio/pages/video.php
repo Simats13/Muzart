@@ -26,7 +26,11 @@ $videos = get_video();
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 mt30 wow text-center">
-                                <h2 class="section-heading" style="margin-bottom:100px">ART VIDEO</h2>
+                                <h2 class="section-heading" style="margin-bottom:100px"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Art vidéo","Video art");
+                            echo $description[$langue]; ?></h2>
                             </div>
                         </div>
                     </div>
@@ -38,13 +42,24 @@ $videos = get_video();
         <div class="row">
             <div class="col-md-12 text-center mb50">
                 <ul class="portfolio-filter mb30 list-inline wow">
-                    <li><a class="btn btn-primary" href="?page=portfolio" data-filter=".portfolio">Tout</a></li>
-                    <li><a class="btn btn-primary active" href="?page=video" data-filter=".video">Vidéos</a></li>
+                    <li><a class="btn btn-primary" href="?page=portfolio" data-filter=".portfolio"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Tout","All");
+                            echo $description[$langue]; ?></a></li>
+                    <li><a class="btn btn-primary active" href="?page=video" data-filter=".video"><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Vidéos","Videos");
+                            echo $description[$langue]; ?></a></li>
                 </ul>
             </div>
         </div>
 </div>
-
+<div style="float:right;">
+					<a href="?page=video" target="_self"><img src="images/drapeau-francais.png" class="drapeau" /></a>
+					<a href="?page=video&lang=en" target="_self"><img src="page/images/drapeau-anglais.png" class="drapeau" /></a>
+				</div>
     <div class="container-fluid pb-video-container">
         <div class="col-md-10 col-md-offset-1">
             <div class="row pb-row">
