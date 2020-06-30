@@ -8,21 +8,14 @@ if($post == false){
 
 ?>
 </div>
-<div class="parallax-container">
-    <div class="parallax">
-        <img src="../img/posts/<?= $post->image?>" alt="<?= $post->title?>">
-    
-    
-    </div>
-
-</div>
-
 <div class="container">
-
+<figure class="media"><oembed url="<?= $post->image?>"></oembed></figure>
+    
 <?php 
 if(isset($_POST['submit'])){
     $title = htmlspecialchars(trim($_POST['title']));
     $content = (trim($_POST['content']));
+    $link = htmlspecialchars(trim($_POST['link']));
     $posted = isset($_POST['public']) ? "1" : "0";
     $errors = [];
 
@@ -43,10 +36,10 @@ if(isset($_POST['submit'])){
         </div>
         <?php
     }else{
-        edit($title,$content,$posted,$_GET['id']);
+        edit($title,$content,$link,$posted,$_GET['id']);
         ?>
             <script>
-                window.location.replace("index.php?page=post&id=<?= $_GET['id'] ?>");
+                window.location.replace("index_video.php?page=post_video&id=<?= $_GET['id'] ?>");
             </script>
         <?php
     }
@@ -63,11 +56,15 @@ if(isset($_POST['submit'])){
         <div class="row">
             <div class="input-field col s12">
                 <input type="text" name="title" id="title" value="<?= $post->title ?>">
-                <label for="title">Titre de l'article</label>
+                <label for="title">Titre de la vidéo</label>
             </div>
             <div class="input-field col s12">
                 <textarea name="content" id="content" class="materialize-textarea"><?= nl2br($post->content) ?></textarea>
                 <label for="content">Contenu de l'article</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="text" name="link" id="link" value="<?= $post->image ?>">
+                <label for="link">Lien de la vidéo</label>
             </div>
             <div class="col s6">
                 <p>Public</p>
@@ -154,3 +151,9 @@ if(isset($_POST['submit'])){
 				console.error( error );
 			} );
 	</script>
+    <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=9867fe0fb5b91b3ddca9ba"></script>
+    <script>
+        document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+            iframely.load( element, element.attributes.url.value );
+        } );
+    </script>

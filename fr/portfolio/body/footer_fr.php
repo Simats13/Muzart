@@ -7,7 +7,8 @@
 
 </head>
 <?php
-
+$db = GetDBConnection();
+$posts = $db->query("SELECT * FROM posts LIMIT 0,2");
 
 
 ?>
@@ -30,11 +31,11 @@
                                         <?php foreach($posts as $post){ ?>
                                         <div class="media">
                                             <div class="pull-left">
-                                                <img class="widget-img" src="blog/img/posts/<?=$post->image ?>" width="50px" height="50px" alt="">
+                                                <img class="widget-img" src="img/posts/<?=$post['image'] ?>" width="50px" height="50px" alt="">
                                             </div>
                                             <div class="media-body">
-                                                <span class="media-heading"><a href="blog/index.php?page=post&id=<?= $post->id ?>"><?= $post->title ?></a></span>
-                                                <small class="muted">Posté le <?= date("d/m/Y à H:i",strtotime($post->date)); ?></small>
+                                                <span class="media-heading"><a href="../blog/index.php?page=post&id=<?= $post['id']; ?>"><?= $post['title'] ?></a></span>
+                                                <small class="muted">Posté le <?= date("d/m/Y à H:i",strtotime($post['date'])); ?></small>
                                             </div>
                                         </div>
                                         <?php } ?>
@@ -74,16 +75,7 @@
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li>
                                     <a href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>

@@ -30,7 +30,7 @@ if(hasnt_password()== 1){
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <center><img src="../blog/img/posts/13.jpg" alt="" width="100px" height="100px"></center>
+                        <center><img src="img/dashboard.png" alt="" width="100px" height="100px"></center>
                         
                     </div>
                 </div>
@@ -54,7 +54,7 @@ if(hasnt_password()== 1){
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <center><img src="../blog/img/posts/13.jpg" alt="" width="100px" height="100px"></center>
+                        <center><img src="img/camera.png" alt="" width="100px" height="100px"></center>
                         
                     </div>
                 </div>
@@ -78,7 +78,7 @@ if(hasnt_password()== 1){
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <center><img src="../blog/img/posts/13.jpg" alt="" width="100px" height="100px"></center>
+                        <center><img src="img/youtube.png" alt="" width="100px" height="100px"></center>
                         
                     </div>
                 </div>
@@ -101,7 +101,7 @@ if(hasnt_password()== 1){
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <center><img src="../blog/img/posts/13.jpg" alt="" width="100px" height="100px"></center>
+                        <center><img src="img/information.png" alt="" width="100px" height="100px"></center>
                         
                     </div>
                 </div>

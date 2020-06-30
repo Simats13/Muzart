@@ -2,7 +2,7 @@
 
 function get_post(){
 
-    global $db;
+    $db = GetDBConnection();
 
     $req = $db->query("
         SELECT  video.id,
@@ -22,18 +22,19 @@ function get_post(){
     return $result;
 }
 
-function edit($title,$content,$posted,$id){
+function edit($title,$content,$link,$posted,$id){
 
-    global $db;
+    $db = GetDBConnection();
 
     $e = [
         'title'     => $title,
         'content'   => $content,
+        'link'      => $link,
         'posted'    => $posted,
         'id'        => $id
     ];
 
-    $sql = "UPDATE video SET title=:title, content=:content, date=NOW(), posted=:posted WHERE id=:id";
+    $sql = "UPDATE video SET title=:title, content=:content,image=:link, date=NOW(), posted=:posted WHERE id=:id";
     $req = $db->prepare($sql);
     $req->execute($e);
 

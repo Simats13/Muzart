@@ -2,27 +2,19 @@
 <h2>Poster un article</h2>
 
 <?php
-
+    $db = GetDBConnection();
     if(isset($_POST['post'])){
         $title = htmlspecialchars(trim($_POST['title']));
         $content = (trim($_POST['content']));
+        $link = htmlspecialchars(trim($_POST['link']));
         $posted = isset($_POST['public']) ? "1" : "0";
 
         $errors = [];
 
-        if(empty($title) || empty($content)){
+        if(empty($title) || empty($content) || empty($link)){
             $errors['empty'] = "Veuillez remplir tous les champs";
         }
 
-        if(!empty($_FILES['image']['name'])){
-            $file = $_FILES['image']['name'];
-            $extensions = ['.png','.jpg','.jpeg','.gif','.PNG','.JPG','.JPEG','.GIF'];
-            $extension = strrchr($file,'.');
-
-            if(!in_array($extension,$extensions)){
-                $errors['image'] = "Cette image n'est pas valable";
-            }
-        }
 
         if(!empty($errors)){
             ?>
@@ -37,15 +29,12 @@
 </div>
 <?php
         }else{
-            post($title,$content,$posted);
-            if(!empty($_FILES['image']['name'])){
-                post_img($_FILES['image']['tmp_name'], $extension);
-            }else{
-                $id = $db->lastInsertId();
-                header("Location:index.php?page=post&id=".$id);
+            post($title,$content,$link,$posted);
+            $id = $db->lastInsertId();
+            header("Location:index_video.php?page=post_video&id=".$id);
             }
         }
-    }
+    
 
 
 ?>
@@ -55,21 +44,17 @@
     <div class="row">
         <div class="input-field col s12">
             <input type="text" name="title" id="title" />
-            <label for="title">Titre de l'article</label>
+            <label for="title">Titre de la vidéo</label>
         </div>
 
         <div class="input-field col s12">
             <textarea name="content" id="content" class="materialize-textarea" placeholder="Contenu de l'article"></textarea>
             <label for="content"></label>
         </div>
-        <div class="col s12">
-            <div class="input-field file-field">
-                <div class="btn col s12">
-                    <span>Image de l'article</span>
-                    <input type="text" class="file-path col s10" readonly />
-                    <input type="file" name="image" class="btn col s12" />
-                </div>
-            </div>
+
+        <div class="input-field col s12">
+            <input type="text" name="link" id="link" />
+            <label for="title">Lien de la vidéo</label>
         </div>
 
         <div class="col s6">

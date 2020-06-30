@@ -1,5 +1,5 @@
 
-<h2>Listing des articles</h2>
+<h2>Listing des vidéos</h2>
 <hr/>
 
 <?php
@@ -16,13 +16,21 @@ foreach($posts as $post){
                     <?= htmlspecialchars(substr(nl2br($post->content),0,1200)) ?>...
                 </div>
                 <div class="col s12 m6 l4">
-                    <img src="../img/posts/<?= $post->image ?>" class="materialboxed responsive-img" alt="<?= $post->title ?>"/>
+                        <figure class="media"><oembed url="<?= $post->image?>"></oembed></figure>
                     <br/><br/>
-                    <a class="btn light-blue waves-effect waves-light" href="index.php?page=post&id=<?= $post->id ?>">Lire l'article complet</a>
+                    <a class="btn light-blue waves-effect waves-light" href="index_video.php?page=post_video&id=<?= $post->id ?>">Lire l'article complet</a>
                 </div>
             </div>
         </div>
     </div>
 
     <?php
-}
+}?>
+
+<script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=9867fe0fb5b91b3ddca9ba"></script>
+    <script>
+        document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+            iframely.load( element, element.attributes.url.value );
+        } );
+    </script>
+

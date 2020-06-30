@@ -104,6 +104,14 @@
             $images = [];
         }
 
+        //SUPRESSION D'UNE IMAGE
+        if(isset($_GET['delete'])) {
+                   
+            $req=$db->query('DELETE FROM portfolio WHERE id= '.$_GET['delete']);
+            header('Location:?index_image.php');
+                        
+                        
+        }
 
 
     ?>
@@ -159,6 +167,7 @@
         <br>
         <br>
             <button type="submit" name="submit" class="btn btn-default">Enregistrer</button>
+            <a href="?page=post_image&id=<?= $post->id ?>&delete=<?=$post->id?>" class="btn btn-danger" id="delete" name="delete" onclick="return confirm('Voulez-vous supprimer l\'article ?')">Supprimer</a>
         </form>
 
     </div>

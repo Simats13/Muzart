@@ -2,7 +2,10 @@
 //RECUPERE LES POSTS DEPUIS LA BDD
 $db = GetDBConnection();
 $images = get_picture();
-$category = category();
+if($images == false){
+    header("Location:index.php?page=error");
+}else{
+    
 
 
 
@@ -73,7 +76,6 @@ $works = $db->query("
                         <div class="col-sm-3">
                             <p><strong>DATE:</strong> <?= $images->date?></p>
                             <p><strong>AUTEUR:</strong> <?= $images->name?></p>
-                            <p><strong>CATEGORIE:</strong> </p>
                             <p class="mt30"><a href="../?page=contact" class="btn btn-primary btn-theme page-scroll">Contacter</a></p>
                         </div>
                     </div>
@@ -260,3 +262,4 @@ $works = $db->query("
     } );
 </script>
 
+<?php } ?>

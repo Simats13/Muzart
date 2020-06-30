@@ -39,7 +39,7 @@ function admin(){
 }
 //FONCTION S'IL N'A PAS DE MOT DE PASSE RENVOIE SUR UNE PAGE SPECIFIQUE
 function hasnt_password(){
-    global $db;
+    $db = GetDBConnection();
 
     $sql = "SELECT * FROM admin WHERE email = '{$_SESSION['admin']}' AND password = ''";
     $req = $db->prepare($sql);

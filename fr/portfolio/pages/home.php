@@ -90,12 +90,12 @@ $get_image = get_image();
                             ?>
                             <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr photo isotope-item">
                                 <div class="hover-item">
-                                    <img src="img/posts/<?= $image->image ?>" class="img-responsive smoothie" alt="">
+                                    <img src="img/posts/<?= resizedName($image->image, 300, 300)?>" class="img-responsive smoothie" alt="">
                                     <div class="overlay-item-caption smoothie"></div>
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
                                             <h3 class="smoothie mb30"><a href="?page=post_image&id=<?= $image->id ?>" title="view project"><?= $image->title ?></a></h3>
-                                            <a href="img/posts/<?= $image->image ?>" title="View Gallery" class="btn btn-primary lb-link smoothie">Visionner</a>
+                                            <a href="img/posts/<?= $image->image ?>" title="Zoomer" class="btn btn-primary lb-link smoothie">Visionner</a>
                                             <a href="?page=post_image&id=<?= $image->id ?>" class="smoothie btn btn-primary">En savoir plus</a>
                                         </div>
                                     </div>
@@ -137,9 +137,9 @@ $get_image = get_image();
 
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="../assets/js/init.js"></script>
+    <script src="../assets/js/plugins.js"></script>
     <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=9867fe0fb5b91b3ddca9ba"></script>
     <script>
         document.querySelectorAll( 'oembed[url]' ).forEach( element => {

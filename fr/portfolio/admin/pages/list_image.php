@@ -19,6 +19,7 @@ foreach($posts as $post){
                     <img src="../img/posts/<?= $post->image ?>" class="materialboxed responsive-img" alt="<?= $post->title ?>"/>
                     <br/><br/>
                     <a class="btn light-blue waves-effect waves-light" href="?page=post_image&id=<?= $post->id ?>">Lire l'article complet</a>
+                    <td><a href="?page=post_image&id=<?=$post->id ?>&delete=<?=$post->id ?>" id="<?=$post->id ?>" name="<?=$post->id?>" class="btn-floating btn-small waves-effect waves-light red delete_comment"><i class="material-icons">delete</i></a></td>
                 </div>
             </div>
         </div>

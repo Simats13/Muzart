@@ -30,13 +30,13 @@ if(hasnt_password()== 1){
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <center><img src="../blog/img/posts/13.jpg" alt="" width="100px" height="100px"></center>
+                        <center><img src="" alt="" width="100px" height="100px"></center>
                         
                     </div>
                 </div>
 
                 <center>
-                    <a href="?page=dashboard_image">Administration PHOTO </a>
+                    <a href="index_image.php?page=dashboard_image">Administration PHOTO </a>
                 </center>
         </div>
     </div>
@@ -54,7 +54,7 @@ if(hasnt_password()== 1){
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <center><img src="../blog/img/posts/13.jpg" alt="" width="100px" height="100px"></center>
+                        <center><img src="" alt="" width="100px" height="100px"></center>
                         
                     </div>
                 </div>
