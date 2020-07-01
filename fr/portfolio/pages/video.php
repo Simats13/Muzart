@@ -1,146 +1,115 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
-    <meta charset="utf-8">
--
-    <title>Pérusat Création</title>
+   
+    <title>Pérusat Création - Portfolio</title>
 
-    
-
+   
 </head>
+<!-- Navigation -->
+
 <?php 
 
 $videos = get_video();
 
 ?>
-<body>
-    <div class="preloader">
-                <div class="preloader-img">
-                    <span class="loading-animation animate-flicker"><img src="assets/img/loading.GIF" alt="loading"/></span>
-                </div>
-    </div>
-    <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg2.jpg" data-speed="0.7">
-                <div class="section-inner pad-top-200">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 mt30 wow text-center">
-                                <h2 class="section-heading" style="margin-bottom:100px"><?php $langue=0;
+
+<div class="preloader">
+            <div class="preloader-img">
+                <span class="loading-animation animate-flicker"><img src="../assets/img/loading.GIF" alt="loading"/></span>
+            </div>
+        </div>
+
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../assets/img/bg/bg2.jpg" data-speed="0.7">
+            <div class="section-inner pad-top-200">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 mt30 wow text-center">
+                            <h2 class="section-heading" style="margin-bottom:100px"><?php $langue=0;
                                 if(isset($_GET["lang"]))
                                 $langue=1;
-                                $description = array("Art vidéo","Video art");
+                                $description = array("ETUDE PHOTOGRAPHIQUE","PHOTOGRAPHIC STUDY");
                             echo $description[$langue]; ?></h2>
-                            </div>
                         </div>
                     </div>
                 </div>
-    </section>
+            </div>
+</section>
 
-<div class="section-inner" style="margin-top:100px">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center mb50">
-                <ul class="portfolio-filter mb30 list-inline wow">
-                    <li><a class="btn btn-primary" href="?page=portfolio" data-filter=".portfolio"><?php $langue=0;
+<div style="float:right;">
+					<a href="?page=photo" target="_self"><img src="images/drapeau-francais.png" class="drapeau" /></a>
+					<a href="?page=photo&lang=en" target="_self"><img src="fr/pages/images/drapeau-anglais.png" class="drapeau" /></a>
+				</div>
+
+        <section class="white-bg" style="margin-top:100px">
+            <div class="section-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center mb50">
+                            <ul class="portfolio-filter mb30 list-inline wow">
+                                <li><a class="btn btn-primary active" href="#" data-filter="*"><?php $langue=0;
                                 if(isset($_GET["lang"]))
                                 $langue=1;
                                 $description = array("Tout","All");
                             echo $description[$langue]; ?></a></li>
-                    <li><a class="btn btn-primary active" href="?page=video" data-filter=".video"><?php $langue=0;
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div>
+                    
+                        <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        <?php foreach($videos as $video){ ?>
+                        
+                            <li class="col-sm-6 col-xs-6 portfolio-item nopadding-lr  isotope-item hover-item">
+                            <figure class="media"><oembed url="<?= $video->image?>"></oembed></figure>
+                                <div class="overlay-item-caption smoothie"></div>
+                                <div class="hover-item-caption smoothie">
+                                    <div class="vertical-center smoothie">
+                                        <h3 class="smoothie mb30"><a href="?page=post_video&id=<?= $video->id ?>" title="view project"><?=$video->title?></a></h3>
+                                        <a href="<?= $video->image?>" title="View Gallery" class="btn btn-primary lb-link smoothie">Visionner</a>
+                                        <a href="?page=post_video&id=<?= $video->id ?>" class="smoothie btn btn-primary"><?php $langue=0;
                                 if(isset($_GET["lang"]))
                                 $langue=1;
-                                $description = array("Vidéos","Videos");
-                            echo $description[$langue]; ?></a></li>
-                </ul>
+                                $description = array("Visionner","See");
+                            echo $description[$langue]; ?></a>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php } ?>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
             </div>
-        </div>
-</div>
-<div style="float:right;">
-					<a href="?page=video" target="_self"><img src="images/drapeau-francais.png" class="drapeau" /></a>
-					<a href="?page=video&lang=en" target="_self"><img src="page/images/drapeau-anglais.png" class="drapeau" /></a>
-				</div>
-    <div class="container-fluid pb-video-container">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="row pb-row">
-                <div class="col-md-3 pb-video">
-                    <iframe class="pb-video-frame" width="100%" height="230" src="https://www.youtube.com/embed/K68UrdUOr2Y?list=RDzuAcaBkcYGE?ecver=1" frameborder="0" allowfullscreen></iframe>
-                    <label class="form-control label-warning text-center">Descriptif</label>
-                </div>
-                <div class="col-md-3 pb-video">
-                    <iframe class="pb-video-frame" width="100%" height="230" src="https://www.youtube.com/embed/K68UrdUOr2Y?list=RDzuAcaBkcYGE?ecver=1" frameborder="0" allowfullscreen></iframe>
-                    <label class="form-control label-warning text-center">Descriptif</label>
-                </div>
-                <div class="col-md-3 pb-video">
-                    <iframe class="pb-video-frame " width="100%" height="230" src="https://www.youtube.com/embed/K68UrdUOr2Y?list=RDzuAcaBkcYGE?ecver=1" frameborder="0" allowfullscreen></iframe>
-                    <label class="form-control label-warning text-center">Descriptif</label>
-                </div>
-                <div class="col-md-3 pb-video">
-                    <iframe class="pb-video-frame" width="100%" height="230" src="https://www.youtube.com/embed/K68UrdUOr2Y?list=RDzuAcaBkcYGE?ecver=1" frameborder="0" allowfullscreen></iframe>
-                    <label class="form-control label-warning text-center">Descriptif</label>
-                </div>
-            </div>
-            <div class="row pb-row">
-                <div class="col-md-3 pb-video">
-                    <iframe class="pb-video-frame" width="100%" height="230" src="https://www.youtube.com/embed/K68UrdUOr2Y?list=RDzuAcaBkcYGE?ecver=1" frameborder="0" allowfullscreen></iframe>
-                    <label class="form-control label-warning text-center">Descriptif</label>
-                </div>
-                <div class="col-md-3 pb-video">
-                    <iframe class="pb-video-frame" width="100%" height="230" src="https://www.youtube.com/embed/K68UrdUOr2Y?list=RDzuAcaBkcYGE?ecver=1" frameborder="0" allowfullscreen></iframe>
-                    <label class="form-control label-warning text-center">Descriptif</label>
-                </div>
-                <div class="col-md-3 pb-video">
-                    <iframe class="pb-video-frame" width="100%" height="230" src="https://www.youtube.com/embed/K68UrdUOr2Y?list=RDzuAcaBkcYGE?ecver=1" frameborder="0" allowfullscreen></iframe>
-                    <label class="form-control label-warning text-center">Descriptif</label>
-                </div>
-                <div class="col-md-3 pb-video">
-                    <iframe class="pb-video-frame" width="100%" height="230" src="https://www.youtube.com/embed/K68UrdUOr2Y?list=RDzuAcaBkcYGE?ecver=1" frameborder="0" allowfullscreen></iframe>
-                    <label class="form-control label-warning text-center">Descriptif</label>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <style>
-    
-        .pb-video {
-            border: 1px solid #e6e6e6;
-            padding: 5px;
-        }
-    
-        .pb-video-frame {
-            transition: width 2s, height 2s;
-        }
-    
-            .pb-video-frame:hover {
-                height: 300px;
-            }
-    
-        .pb-row {
-            margin-bottom: 10px;
-        }
-    </style>
+        </section>
 
+        </br>
+        </br>
+
+       
 
     </div>
-
-    <br>
 
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/plugins.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="../assets/js/init.js"></script>          
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <script src="../assets/js/init.js"></script>
+    <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=9867fe0fb5b91b3ddca9ba"></script>
+    <script>
+        document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+            iframely.load( element, element.attributes.url.value );
+        } );
+    </script>
 
 
 </body>
-
 </html>
+

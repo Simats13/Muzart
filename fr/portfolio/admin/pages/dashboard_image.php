@@ -3,7 +3,7 @@
 if(hasnt_password()== 1){
     header("Location:index.php?page=password");
 }
-$post = get_post();
+
 
 ?>
 <h5>Bonjour <?= $_SESSION['admin']  ?></h5>
@@ -12,20 +12,21 @@ $post = get_post();
     <?php 
         $tables = [
             "Publications" => "portfolio",
-            "Commentaires" => "comments",
+            "Commentaires" => "commentsPhoto",
             "Administrateurs" => "admin"   
 
         ];
 
         $colors = [
             "portfolio" => "blue-grey",
-            "comments" => "red",
+            "commentsPhoto" => "red",
             "admin" => "blue"
         ];
     
     ?>
 
-    <?php 
+
+<?php 
         foreach($tables as $table_name => $table){
             ?>
                 <div class="col 14 m6 s12">

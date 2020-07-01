@@ -22,7 +22,11 @@
             <div class="container vertical-center">
                 <div class="intro-text vertical-center text-left smoothie">
                     <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">404</div>
-                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s"><span class="rotate">La page n'existe pas, ce n'est pas grave !</span></div>
+                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s"><span class="rotate"><?php $langue=0;
+                                                    if(isset($_GET["lang"]))
+                                                    $langue=1;
+                                                    $description = array("La page n'existe pas !","Don't Worry be happy !");
+                                                echo $description[$langue]; ?></span></div>
                 </div>
             </div>
         </header>

@@ -48,7 +48,7 @@ function category(){
             'post_id'=> $_GET["id"]
         );
 //Insére les commentaires dans la table COMMENTS
-        $sql = "INSERT INTO comments(name,email,comments,post_id,date) VALUES(:name, :email, :comment, :post_id, NOW())";
+        $sql = "INSERT INTO commentsPhoto(name,email,comments,post_id,date) VALUES(:name, :email, :comment, :post_id, NOW())";
         $req = $db->prepare($sql);
         $req->execute($c);
 
@@ -57,7 +57,7 @@ function category(){
     function get_comments(){
 
         $db = GetDBConnection();
-        $req = $db->query("SELECT * FROM comments WHERE post_id = '{$_GET['id']}' ORDER BY date DESC");
+        $req = $db->query("SELECT * FROM commentsPhoto WHERE post_id = '{$_GET['id']}' ORDER BY date DESC");
         $results = [];
         while($rows = $req->fetchObject()){
             $results[] = $rows;

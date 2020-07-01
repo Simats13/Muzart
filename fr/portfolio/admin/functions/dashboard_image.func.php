@@ -20,18 +20,18 @@ function get_comments(){
     $db = GetDBConnection();
 
     $req = $db->query("
-        SELECT  comments.id,
-                comments.name,
-                comments.email,
-                comments.date,
-                comments.post_id,
-                comments.comments,
-                posts.title
-        FROM comments
-        JOIN posts
-        ON comments.post_id = posts.id
-        WHERE comments.seen ='0'
-        ORDER BY comments.date ASC
+        SELECT  commentsPhoto.id,
+                commentsPhoto.name,
+                commentsPhoto.email,
+                commentsPhoto.date,
+                commentsPhoto.post_id,
+                commentsPhoto.comments,
+                portfolio.title
+        FROM commentsPhoto
+        JOIN portfolio
+        ON commentsPhoto.post_id = portfolio.id
+        WHERE commentsPhoto.seen ='0'
+        ORDER BY commentsPhoto.date ASC
     
     ");
 
@@ -41,18 +41,7 @@ function get_comments(){
     }
 
     return $result;
+    $req->closeCursor();
+    $db = null;
 }
 
-//Création de la fonction permettant d'obtenir les posts 
-function get_post(){
-    $db = GetDBConnection();
-
-    $req = $db->query("
-        SELECT  admin.name
-        FROM admin
-    
-    ");
-
-    $result = $req->fetchObject();
-    return $result;
-}

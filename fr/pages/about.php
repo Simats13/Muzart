@@ -31,7 +31,11 @@
     <link href="assets/css/pe-icons.css" rel="stylesheet">
 
 </head>
-
+<div class="preloader">
+            <div class="preloader-img">
+                <span class="loading-animation animate-flicker"><img src="assets/img/loading.GIF" alt="loading"/></span>
+            </div>
+        </div>
  <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg2.jpg" data-speed="0.7">
             <div class="section-inner pad-top-200">
                 <div class="container">

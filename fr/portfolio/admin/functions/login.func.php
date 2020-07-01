@@ -1,7 +1,7 @@
 <?php
 
 function is_admin($email,$password){
-    global $db;
+    $db = GetDBConnection();
 
     $a = [
         'email' => $email,

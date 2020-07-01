@@ -12,7 +12,7 @@ if($images == false){
 $works = $db->query("
     SELECT portfolio.title, portfolio.id, portfolio.image_id, images.name as image_name
     FROM portfolio
-    JOIN images ON images.work_id = portfolio.id
+    JOIN images ON images.work_id = '{$_GET['id']}'
 ")->fetchAll();
 
 
@@ -23,49 +23,89 @@ $works = $db->query("
 
     <div class="master-wrapper">
 
+    <style>
+        .parallax {
+                    /* The image used */
+                    background-image: url("img/posts/<?= $images->image ?>");
 
+                    /* Set a specific height */
+                    min-height: 100px; 
+
+                    /* Create the parallax scrolling effect */
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+        </style>
 
         <!-- Header -->
         <header>
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="img/posts/<?= $images->image ?>"
-            data-speed="0.7">
-            <div class="section-inner text-center">
-        <div class="container" style="margin-top:100px;">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 mt30 wow">
-                <!--AFFICHE LE TITRE DU POST SELON l'ID -->
-                    <h2 class="section-heading"><?= $images->title?></h2>
-                    <div class="item-metas text-muted mb30 white">
-                        <span class="meta-item"><i class="pe-icon pe-7s-user"></i> Auteur
-                        <!--AFFICHE L'AUTEUR DU POST SELON l'ID -->
-                            <span><?= $images->name ?></span></span>
-                        <span class="meta-item"><i class="pe-icon pe-7s-comment"></i> Commentaires <span>3</span></span>
-                        <span class="meta-item post-date"><i class="pe-icon pe-7s-clock"></i> Publié le
-                        <!--AFFICHE LA DATE DU POST SELON l'ID -->
-                            <span><?= date("d/m/Y à H:i",strtotime($images->date)); ?></span></span>
+                    <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="img/posts/<?= $images->image ?>"
+                        data-speed="0.7" style="margin-bottom:10%">
+                        <div class="section-inner text-center">
+                    <div class="container" style="margin-top:100px;">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2 mt30 wow">
+                            <!--AFFICHE LE TITRE DU POST SELON l'ID -->
+                                <h2 class="section-heading"><?= $images->title?></h2>
+                                <div class="item-metas text-muted mb30 white">
+                                    <span class="meta-item"><i class="pe-icon pe-7s-user"></i> Auteur
+                                    <!--AFFICHE L'AUTEUR DU POST SELON l'ID -->
+                                        <span><?= $images->name ?></span></span>
+                                    <span class="meta-item"><i class="pe-icon pe-7s-comment"></i> Commentaires <span>3</span></span>
+                                    <span class="meta-item post-date"><i class="pe-icon pe-7s-clock"></i> Publié le
+                                    <!--AFFICHE LA DATE DU POST SELON l'ID -->
+                                        <span><?= date("d/m/Y à H:i",strtotime($images->date)); ?></span></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
         </header>
+
 
         
         <header>
-       
-            <ul class="owl-carousel-paged wow fadeIn list-unstyled post-slider" data-items="3" data-items-desktop="[1200,3]" data-items-desktop-small="[980,3]" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
-            <?php foreach ($works as $work): ?>
-                <li>
-                    <div class="hover-item mb30 post-slide">
-                        <img src="img/posts/<?= resizedName($work['image_name'], 300, 300)?>" class="img-responsive smoothie" alt="title" >
-                    </div>
-                    
-                </li>
-                <?php endforeach ?>
-            </ul>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:50%;margin-left:auto;margin-right:auto;margin-bottom:10%">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                        <?php $num=0; foreach ($works as $work):  $num++; ?>
+                        <li data-target="#myCarousel" data-slide-to="0" class="<?php if($num==1){ echo ' active'; } ?>"></li>
+                        <?php endforeach ?>
+                        </ol>
+                <div class="carousel-inner">
+
+                    <?php
+                                    
+                                    
+                                    // On affiche chaque entrée une à une
+                                    $num = 0;
+                                    foreach ($works as $work){
+                                        $num++;
+                    ?>
+                        <div class="item<?php if($num==1){ echo ' active'; } ?>">
+                            <img class="d-block w-100" src="img/posts/<?= $work['image_name']; ?>" alt="Slide <?php echo $num; ?>" />
+                        </div>
+                <?php
+                                }
+                ?>
+                </div>
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                        </a>
+            
+        </div>
             
         </header>
+       
         <section>
             <div class="section-inner">
                 <div class="container pad-sides-120">
@@ -195,6 +235,7 @@ $works = $db->query("
                                             <?php
                                         }else{
                                             //LE COMMENTAIRE S'AFFICHE EN TEMPS REEL UNE FOIS POSTE
+                                            var_dump($_POST);
                                             comment($name,$email,$comment);
                                             ?>
                                                 <script>
@@ -212,7 +253,7 @@ $works = $db->query("
 
 
                                     <div id="comment_message"></div>
-                                    <form method="post" id="commentform" class="comment-form" action="#">
+                                    <form method="post" id="commentform" class="comment-form">
                                         <input type="text" class="form-control col-md-4" name="name" id="name" placeholder="Votre Nom *" required data-validation-required-message="Veuillez entrer votre Nom !"/>
                                         <label for="name"></label>
                                         <input type="text" class="form-control col-md-4" name="email" id="email" placeholder="Votre Email *" required data-validation-required-message="Veuillez entrer votre adresse Email ! !" />
@@ -234,7 +275,8 @@ $works = $db->query("
     
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
+    
+   
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="../assets/js/init.js"></script>
 

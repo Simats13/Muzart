@@ -11,7 +11,7 @@ if(hasnt_password() == 0){
         <div class="card-panel">
             <div class="row">
                 <div class="col s6 offset-s3">
-                    <img src="../img/modo.png" alt="Modérateur" width="100%"/>
+                    <img src="img/modo.png" alt="Modérateur" width="100%"/>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@ if(hasnt_password() == 0){
                     <?php
                     }else{
                         update_password($password);
-                        header("Location:index.php?page=dashboard");
+                        header("Location:index.php?page=principal");
                     }
                 }
 

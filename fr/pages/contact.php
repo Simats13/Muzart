@@ -32,12 +32,26 @@
 
     <div class="master-wrapper">
 
- 
+        <style>
+        .parallax {
+                    /* The image used */
+                    background-image: url("assets/img/bg/bg_perusat.jpg");
+
+                    /* Set a specific height */
+                    min-height: 300px; 
+
+                    /* Create the parallax scrolling effect */
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+        </style>
     
         <!-- Navigation -->
 
 
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7" style="margin-bottom:50px">
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll"  data-speed="0.7" style="margin-bottom:50px">
             <div class="section-inner pad-top-200">
                 <div class="container">
                     <div class="row">
@@ -75,6 +89,7 @@
                             <div id="message"></div>
                             <?php 
                                     //RECUPERATION DU FORMULAIRE ET TRAITEMENT (COMMENTAIRE)
+                                    
                                     if(isset($_POST['submit'])){
                                         $name = htmlspecialchars(trim($_POST['name']));
                                         $email = htmlspecialchars(trim($_POST['mail']));
@@ -119,21 +134,21 @@
                                 if(isset($_GET["lang"]))
                                 $langue=1;
                                 $description = array("Votre nom *","Your name *");
-                            echo $description[$langue]; ?> " id="name" required data-validation-required-message="Please enter your name." />
+                            echo $description[$langue]; ?> " id="name"  />
 
                                 <input type="text" class="form-control col-md-4" name="mail" placeholder="<?php $langue=0;
                                 if(isset($_GET["lang"]))
                                 $langue=1;
                                 $description = array("Votre e-mail *","Your e-mail *");
-                            echo $description[$langue]; ?> " id="mail" required data-validation-required-message="Please enter your email address." />
+                            echo $description[$langue]; ?> " id="mail"  />
 
                                 <textarea name="message"  class="form-control" id="message" placeholder="<?php $langue=0;
                                 if(isset($_GET["lang"]))
                                 $langue=1;
                                 $description = array("Votre message *","Your message *");
-                            echo $description[$langue]; ?> " required data-validation-required-message="Please enter a message."></textarea>
+                            echo $description[$langue]; ?> " ></textarea>
 
-                                <input class="btn btn-primary mt30 btn-grey pull-right" type="submit" name="submit" value="Submit" />
+                               
                                 <button type="submit" name="submit" id="submit" class="btn btn-primary pull-right"><?php $langue=0;
                                 if(isset($_GET["lang"]))
                                 $langue=1;
@@ -149,11 +164,11 @@
 
 
 
-
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <!--<script src="assets/js/plugins.js"></script>-->
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="assets/js/init.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

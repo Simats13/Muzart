@@ -66,7 +66,7 @@
                                 $description = array("Portfolio","Portfolio");
                             echo $description[$langue]; ?></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="?page=photo"><?php $langue=0;
+                                <li><a href="?page=image"><?php $langue=0;
                                 if(isset($_GET["lang"]))
                                 $langue=1;
                                 $description = array("Etude photographique","Photographic study");
@@ -122,20 +122,6 @@
             </div>
             <!-- /.container-fluid -->
         </nav>
-
-        <div id="search-wrapper">
-            <button type="button" class="close">×</button>
-            <div class="vertical-center text-center">
-                <form>
-                    <input type="search" value="" placeholder="Rechercher un terme" />
-                    <button type="submit" class="btn btn-primary btn-white"><?php $langue=0;
-                                if(isset($_GET["lang"]))
-                                $langue=1;
-                                $description = array("Recherche","Search");
-                            echo $description[$langue]; ?></button>
-                </form>
-            </div>
-        </div>
 
         
 

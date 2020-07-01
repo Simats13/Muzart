@@ -90,7 +90,7 @@ $get_image = get_image();
                             ?>
                             <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr photo isotope-item">
                                 <div class="hover-item">
-                                    <img src="img/posts/<?= resizedName($image->image, 300, 300)?>" class="img-responsive smoothie" alt="">
+                                    <img src="img/posts/<?= $image->image?>" class="img-responsive smoothie" alt="">
                                     <div class="overlay-item-caption smoothie"></div>
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">

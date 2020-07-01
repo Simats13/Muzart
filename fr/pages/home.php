@@ -1,3 +1,11 @@
+<?php 
+
+$videos = get_videos();
+
+$images = get_portfolios();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,14 +17,14 @@
 </head>
 
 <body id="page-top" class="index">
-
-    <div class="master-wrapper">
-
-        <div class="preloader">
+<div class="preloader">
             <div class="preloader-img">
                 <span class="loading-animation animate-flicker"><img src="assets/img/loading.GIF" alt="loading"/></span>
             </div>
         </div>
+    <div class="master-wrapper">
+
+
 
         <!-- Navigation -->
 
@@ -62,8 +70,6 @@
                         <div class="col-md-6 text-right">
                             <ul class="portfolio-filter mb30 list-inline wow">
                                 <li><a class="btn btn-primary active" href="#" data-filter="*">Tout</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".apps">Apps</a></li>
-                                <li><a class="btn btn-primary" href="#" data-filter=".design">Design</a></li>
                                 <li><a class="btn btn-primary" href="#" data-filter=".photography">Photographie</a></li>
                                 <li><a class="btn btn-primary" href="#" data-filter=".video">Video</a></li>
                             </ul>
@@ -73,127 +79,43 @@
                 <div class="container" style="margin-bottom:50px">
                     <div class="col-md-12">
                         <ul class="portfolio-items nopadding-lr isotope list-unstyled">
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr apps isotope-item">
+
+                        <?php foreach($images as $image){?>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr photography isotope-item">
                                 <div class="hover-item">
-                                    <img src="assets/img/portfolio/portfolio1.jpg" class="img-responsive smoothie" alt="">
+                                    <img src="portfolio/img/posts/<?= $image->image?>" class="img-responsive smoothie" alt="">
                                     <div class="overlay-item-caption smoothie"></div>
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Plein écran</a></h3>
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project"><?= $image->title?></a></h3>
                                             <a href="assets/img/portfolio/portfolio1.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr apps isotope-item">
+                        <?php } ?>
+                        <?php foreach($videos as $video){?>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr video isotope-item">
                                 <div class="hover-item">
-                                    <img src="assets/img/portfolio/portfolio2.jpg" class="img-responsive smoothie" alt="">
+                                    <figure class="media"><oembed url="<?= $video->image?>"></oembed></figure>
                                     <div class="overlay-item-caption smoothie"></div>
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project"><?= $video->title?></a></h3>
                                             <a href="assets/img/portfolio/portfolio2.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
                                             <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr photography isotope-item">
-                                <div class="hover-item">
-                                    <img src="assets/img/portfolio/portfolio3.jpg" class="img-responsive smoothie" alt="">
-                                    <div class="overlay-item-caption smoothie"></div>
-                                    <div class="hover-item-caption smoothie">
-                                        <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
-                                            <a href="assets/img/portfolio/portfolio3.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr video isotope-item hover-item">
-                                <img src="assets/img/portfolio/portfolio4.jpg" class="img-responsive smoothie" alt="">
-                                <div class="overlay-item-caption smoothie"></div>
-                                <div class="hover-item-caption smoothie">
-                                    <div class="vertical-center smoothie">
-                                        <h3 class="smoothie mb30"><a href="single-portfolio-carousel.html" title="view project">Carousel Gallery</a></h3>
-                                        <a href="assets/img/portfolio/portfolio1.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                        <a href="single-portfolio-carousel.html" class="smoothie btn btn-primary">View</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr design isotope-item">
-                                <div class="hover-item">
-                                    <img src="assets/img/portfolio/portfolio5.jpg" class="img-responsive smoothie" alt="">
-                                    <div class="overlay-item-caption smoothie"></div>
-                                    <div class="hover-item-caption smoothie">
-                                        <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
-                                            <a href="assets/img/portfolio/portfolio5.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr photography isotope-item">
-                                <div class="hover-item">
-                                    <img src="assets/img/portfolio/portfolio6.jpg" class="img-responsive smoothie" alt="">
-                                    <div class="overlay-item-caption smoothie"></div>
-                                    <div class="hover-item-caption smoothie">
-                                        <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
-                                            <a href="assets/img/portfolio/portfolio6.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr video isotope-item">
-                                <div class="hover-item">
-                                    <img src="assets/img/portfolio/portfolio7.jpg" class="img-responsive smoothie" alt="">
-                                    <div class="overlay-item-caption smoothie"></div>
-                                    <div class="hover-item-caption smoothie">
-                                        <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
-                                            <a href="assets/img/portfolio/portfolio7.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr design isotope-item">
-                                <div class="hover-item">
-                                    <img src="assets/img/portfolio/portfolio8.jpg" class="img-responsive smoothie" alt="">
-                                    <div class="overlay-item-caption smoothie"></div>
-                                    <div class="hover-item-caption smoothie">
-                                        <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
-                                            <a href="assets/img/portfolio/portfolio8.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr design isotope-item">
-                                <div class="hover-item">
-                                    <img src="assets/img/portfolio/portfolio9.jpg" class="img-responsive smoothie" alt="">
-                                    <div class="overlay-item-caption smoothie"></div>
-                                    <div class="hover-item-caption smoothie">
-                                        <div class="vertical-center smoothie">
-                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Fullscreen Gallery</a></h3>
-                                            <a href="assets/img/portfolio/portfolio9.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                        <?php } ?>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="dark-wrapper dark-grey-opaqued opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg_perusat.jpg" data-speed="0.7" style="margin-bottom:50px">
+        <section class="dark-wrapper dark-grey-opaqued opaqued parallax" data-parallax="scroll" data-image-src="assets/Photo/isabelle.png" data-speed="0.7" style="margin-bottom:50px">
             <div class="section-inner">
                 <div class="container">
                     <div class="row">
@@ -381,11 +303,6 @@
             </div>
         </section>
 
-        <?php include 'body/footer.php'?>
-        <?php include "body/header.php";?>
-
- 
-
     </div>
 
     <script src="assets/js/jquery.js"></script>
@@ -405,12 +322,18 @@
     $(document).ready(function() {
         'use strict';
         jQuery('#headerwrap').backstretch([
-            "assets/img/bg/bg_perusat.jpg"
+            "assets/Photo/isabelle.png"
         ], {
             duration: 8000,
             fade: 500
         });
     });
+    </script>
+    <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=9867fe0fb5b91b3ddca9ba"></script>
+    <script>
+        document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+            iframely.load( element, element.attributes.url.value );
+        } );
     </script>
 
 </body>

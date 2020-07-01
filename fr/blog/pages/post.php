@@ -6,6 +6,22 @@ if($post == false){
     header("Location:index.php?page=error");
 }else{
     ?>
+
+<style>
+        .parallax {
+                    /* The image used */
+                    background-image: url("img/posts/<?= $post->image ?>");
+
+                    /* Set a specific height */
+                    min-height: 100px; 
+
+                    /* Create the parallax scrolling effect */
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+        </style>
     <!--AFFICHE L'IMAGE DU POST SELON l'ID -->
         <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="img/posts/<?= $post->image ?>"
             data-speed="0.7">
@@ -179,7 +195,7 @@ if($post == false){
     
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
+    
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="../assets/js/init.js"></script>
 

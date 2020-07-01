@@ -8,14 +8,14 @@
 </head>
 
 <body id="page-top" class="index">
-
-    <div class="master-wrapper">
-
-        <div class="preloader">
+<div class="preloader">
             <div class="preloader-img">
                 <span class="loading-animation animate-flicker"><img src="../assets/img/loading.GIF" alt="loading"/></span>
             </div>
         </div>
+    <div class="master-wrapper">
+
+
 
         <!-- Header -->
         <header id="headerwrap" class="fullheight dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../assets/img/bg/bg5.jpg" data-speed="0.7">

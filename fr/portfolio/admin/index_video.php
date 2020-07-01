@@ -9,7 +9,7 @@ if(isset($_GET['page']) && !empty($_GET['page'])){
         $page = "error";
     }
 }else{
-    $page = "principal";
+    $page = "dashboard_video";
 }
 
 $pages_functions = scandir('functions/');

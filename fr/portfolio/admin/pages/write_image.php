@@ -5,10 +5,11 @@
 $db = GetDBConnection();
 
 if(isset($_POST['post']) ){
-    
+    var_dump($_POST);
     
     $title = $_POST['name'];
     $category_id = $_POST['category_id'];
+    var_dump($_POST['category_id']);
     $content = $_POST['content'];
     $posted = isset($_POST['public']) ? "1" : "0";
     $errors = [];
@@ -49,6 +50,7 @@ if(isset($_POST['post']) ){
         $req = $db->prepare($sql);
         $req->execute($p);
         $_GET['id'] = $db->lastInsertId();
+        $id = $db->lastInsertId();
 
         if(!empty($_FILES['image']['name'])){
             
@@ -96,7 +98,7 @@ if(isset($_POST['post']) ){
             }
         }
 
-        $id = $db->lastInsertId();
+        
         header("Location:?page=post_image&id=".$id);
         die();
 

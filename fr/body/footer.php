@@ -30,7 +30,13 @@ $posts = get_posts();
                             $langue=1;
                             $description = array("Mondiale","Coverage");
                         echo $description[$langue]; ?></h4>
-                                    <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
+                                    <p><?php $langue=0;
+                                if(isset($_GET["lang"]))
+                                $langue=1;
+                                $description = array("Isabelle Pérusat née à Montpellier, commence la musique à 5 ans , passe un vingtaine d'années à Paris , pianiste , compositrice , chanteuse , parcours classique , orientation pop music , photographe , création scénique , vidéo , cette artiste complète à plus d'une corde à son arc .
+                                Dans les années 90 , elle travaille avec le groupe «Eurythmics» en collaborant avec eux à la sortie d'un album .","Isabelle Pérusat born in Montpellier, started music at 5, spent twenty years in Paris, pianist, composer, singer, classical path, pop music orientation, photographer, scenic creation, video, this artist completes in more than one string to his bow.
+                                In the 90s, she worked with the group «Eurythmics» by collaborating with them on the release of an album.");
+                            echo $description[$langue]; ?></p>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -65,20 +71,20 @@ $posts = get_posts();
                             </div>
                             <div class="col-md-4">
                                 <div class="widget">
-                                    <h4 class="widget-title">Popular Tags</h4>
+                                    <h4 class="widget-title"><?php $langue=0;
+                            if(isset($_GET["lang"]))
+                            $langue=1;
+                            $description = array("Liens","Link");
+                        echo $description[$langue]; ?></h4>
                                     <div class="tagcloud">
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Local</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Business</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Media</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Photogtraphy</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Aid</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Fashion</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">News</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Cars</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Global Affairs</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Music</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Downloads</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">MP3</a>
+                                        <a href="portfolio" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Portfolio</a>
+                                        <a href="blog" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Blog</a>
+                                        <a href="?page=about" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics"><?php $langue=0;
+                            if(isset($_GET["lang"]))
+                            $langue=1;
+                            $description = array("À Propos","About");
+                        echo $description[$langue]; ?></a>
+                                        <a href="?page=contact" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Contact</a>
                                     </div>
                                 </div>
                             </div>
@@ -96,16 +102,7 @@ $posts = get_posts();
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li>
                                     <a href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
