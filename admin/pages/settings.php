@@ -142,11 +142,11 @@ if( admin()!=1){
                             $mail->isSMTP();
                             $mail->Host = 'smtp.office365.com';
                             $mail->SMTPAuth = true;
-                            $mail->Username = 'm.maximin@intech-sud.fr';
-                            $mail->Password = 'Puj66064';
+                            $mail->Username = '/';
+                            $mail->Password = '/';
                             $mail->SMTPSecure = 'tls';
                             $mail->Port = 587 ;
-                            $mail->setFrom('m.maximin@intech-sud.fr','ADMINISTRATEUR');
+                            $mail->setFrom('/','ADMINISTRATEUR');
                             $mail->AddAddress($adresse, 'Organisateur');
                             $mail->isHTML(true);
                             $mail->Subject = $objet;
