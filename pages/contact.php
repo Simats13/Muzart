@@ -10,6 +10,9 @@
 </head>
 
 <body id="page-top" class="index">
+        
+ 
+       
 
     <div class="master-wrapper">
 
@@ -101,7 +104,7 @@
                                             <?php
                                         }else{
                                             //LE COMMENTAIRE S'AFFICHE EN TEMPS REEL UNE FOIS POSTE
-                                            echo "Nom:".$name."<br>"."Email:".$email."<br>"."Message:".$message; // Test pour voir si ça récupère bien les données 
+                                            echo "Votre message a bien été envoyé ! "; // Test pour voir si ça récupère bien les données 
                                             recevoir($name,$email,$message);
 
                                         }

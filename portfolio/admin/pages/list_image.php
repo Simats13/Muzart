@@ -34,7 +34,7 @@ foreach($posts as $post){
         <tr>
             <td></td>
             <td><h3><center>Aucune réalisation n'est présente</center></h3></td>
-            <td><h4><center><a href="?page=write_video"> Ajouter une vidéo </a></center></h4></td>
+            <td><h4><center><a href="?page=write_image"> Ajouter une réalisation </a></center></h4></td>
         </tr>
     <?php
 }

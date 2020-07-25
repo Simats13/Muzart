@@ -117,7 +117,7 @@ if( admin()!=1){
                                 </tr>
                                     <center>
                                     <h3>Bonjour '.$name.', vous avez été convié à administrer le site internet Perusat Création</h3>
-                                    <h3>Voici votre identifiant et code unique à insérer sur <a href="http://localhost/admin/index.php?page=new">cette page</a>:</h3>
+                                    <h3>Voici votre identifiant et code unique à insérer sur <a href="http://isabelleperusat.com/admin/index.php?page=new">cette page</a>:</h3>
                                     <br/>
                                     
                                     <h3>Identifiant: '.$adresse.'</h3>
@@ -140,13 +140,13 @@ if( admin()!=1){
                             $mail->CharSet = 'UTF-8';
                             $mail->SMTPDebug = 0;
                             $mail->isSMTP();
-                            $mail->Host = 'smtp.office365.com';
+                            $mail->Host = 'ssl0.ovh.net';
                             $mail->SMTPAuth = true;
-                            $mail->Username = '/';
-                            $mail->Password = '/';
+                            $mail->Username = 'admin@isabelleperusat.com';
+                            $mail->Password = 'pe\Qgoa)43Ez';
                             $mail->SMTPSecure = 'tls';
                             $mail->Port = 587 ;
-                            $mail->setFrom('/','ADMINISTRATEUR');
+                            $mail->setFrom('admin@isabelleperusat.com','ADMINISTRATEUR');
                             $mail->AddAddress($adresse, 'Organisateur');
                             $mail->isHTML(true);
                             $mail->Subject = $objet;
@@ -158,7 +158,7 @@ if( admin()!=1){
                             
                         
                         
-                        echo 'Message a été envoyé';
+                        echo 'L\'utilisateur a bien été ajouté. Le mail a été envoyé.';
                         } catch (Exception $e) {
                         echo "Message n'a pas été envoyé: {$mail->ErrorInfo}";
                         }

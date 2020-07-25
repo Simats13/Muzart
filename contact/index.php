@@ -23,6 +23,7 @@ if(in_array($page.'.func.php',$pages_functions)){
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../assets/css/materialize.css"  media="screen,projection"/>
     <title>Perusat Créations | Administration</title>

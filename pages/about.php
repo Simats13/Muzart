@@ -88,7 +88,7 @@ $videos = get_videos();
                         </div>
 
                         <div class="col-md-6">
-                            <img src="assets/Photo/isabelle.png" class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s" alt="">
+                            <img src="assets/img/photo/isabelle.png" class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s" alt="">
                         </div>
                     </div>
                 </div>

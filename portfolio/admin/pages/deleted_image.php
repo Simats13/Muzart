@@ -6,5 +6,5 @@ if(isset($_GET['id'])) {
 }
 $req->closeCursor();
 $db = null;
-
+header('Location:?dashboard');
 ?>

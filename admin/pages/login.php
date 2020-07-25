@@ -1,9 +1,11 @@
+
 <?php
     if(isset($_SESSION['admin'])){
         header("Location:index.php?page=principal");
     }
+    
 ?>
-
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <div class="row">
     <div class="col l4 m6 s12 offset-l4 offset-m3">
         <div class="card-panel">
@@ -16,16 +18,31 @@
             <h4 class="center-align">Se connecter</h4>
 
             <?php
+
+                require('recaptcha/autoload.php');
+            
                 if(isset($_POST['submit'])){
-                    $email = htmlspecialchars(trim($_POST['email']));
-                    $password = htmlspecialchars(trim($_POST['password']));
+                    if(isset($_POST['g-recaptcha-response'])){
+                        $recaptcha = new \ReCaptcha\ReCaptcha('6LenjrMZAAAAAGFZYBgEfAgmxb_omKnz5YyOGwLe');
+                        $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
 
-                    $errors = [];
 
-                    if(empty($email) || empty($password)){
-                        $errors['empty'] = "Tous les champs n'ont pas été remplis!";
-                    }else if(is_admin($email,$password) == 0){
-                        $errors['exist']  = "Cet administrateur n'existe pas";
+                        $email = htmlspecialchars(trim($_POST['email']));
+                        $password = htmlspecialchars(trim($_POST['password']));
+
+                        $errors = [];
+
+                        if(empty($email) || empty($password)){
+                            $errors['empty'] = "Tous les champs n'ont pas été remplis !";
+                        }else if(is_admin($email,$password) == 0){
+                            $errors['exist']  = "Cet administrateur n'existe pas";
+                        }
+                        if($resp->getErrorCodes()){
+                            $errors['emptyCaptcha']  = "Le captcha n'est pas rempli !";
+                        }
+                    
+                        
+                  
                     }
 
                     if(!empty($errors)){
@@ -64,6 +81,7 @@
                 </div>
 
                 <center>
+                    <div class="g-recaptcha" data-sitekey="6LenjrMZAAAAAESM1lVBC89T5PK1qtYoB9P6ImQr" style="margin-bottom:1vw"></div>
                     <button type="submit" name="submit" class="waves-effect waves-light btn light-blue">
                         <i class="material-icons left">perm_identity</i>
                         Se connecter

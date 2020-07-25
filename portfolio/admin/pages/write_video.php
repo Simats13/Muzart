@@ -31,7 +31,7 @@
         }else{
             post($title,$content,$link,$posted);
             $id = $db->lastInsertId();
-            header("Location:index_video.php?page=post_video&id=".$id);
+            header("Location:index_video.php?page=list_video");
             }
         }
     

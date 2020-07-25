@@ -7,8 +7,13 @@
 </head>
 
 <body>
+<div class="preloader">
+            <div class="preloader-img">
+                <span class="loading-animation animate-flicker"><img src="../assets/img/loading.GIF" alt="loading"/></span>
+            </div>
+        </div>
     <div class="row">
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../assets/img/photo/IMG_3262.jpg"
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../assets/img/photo/IMG_3262.JPG"
             data-speed="0.7"style="margin-bottom:50px" >
             <div class="section-inner pad-top-200">
                 <div class="container">

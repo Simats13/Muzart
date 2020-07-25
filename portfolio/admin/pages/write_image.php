@@ -97,7 +97,7 @@ if(isset($_POST['post']) ){
         }
 
         
-        header("Location:?page=post_image&id=".$id);
+        header("Location:?page=list_image");
         die();
 
 

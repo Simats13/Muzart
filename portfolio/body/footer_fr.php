@@ -99,19 +99,18 @@ $posts = get_posts();
                         <div class="col-md-12 text-center">
                             <ul class="list-inline social-links wow">
                                 <li>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://www.linkedin.com/in/isabelle-perusat-a38b2639"><i class="fa fa-linkedin"></i></a>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="col-md-12 text-center ptb">
                             <span class="copyright">Copyright 2019. Designed by IN'TECH</span>
+                            <br>
+                            <a href="http://intech-sud.fr/"><img src="../assets/img/intech.svg" alt="intech" width="150vw" height="150vw"></a>
                         </div>
                     </div>
                 </div>

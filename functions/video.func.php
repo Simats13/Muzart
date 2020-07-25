@@ -19,7 +19,7 @@ function get_videos(){
         ON video.writter=admin.email
         WHERE posted='1'
         ORDER BY date DESC
-        LIMIT 0,5
+        LIMIT 0,100
     
     ");
 

@@ -3,6 +3,8 @@
 
 <?php
 
+$db = GetDBConnection();
+
     if(isset($_POST['post'])){
         $title = htmlspecialchars(trim($_POST['title']));
         $content = (trim($_POST['content']));
@@ -42,7 +44,8 @@
                 post_img($_FILES['image']['tmp_name'], $extension);
             }else{
                 $id = $db->lastInsertId();
-                header("Location:index.php?page=post&id=".$id);
+                header("Location:?page=list");
+                $db = null;
             }
         }
     }

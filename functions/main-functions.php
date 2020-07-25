@@ -6,10 +6,10 @@
 
 function GetDBConnection()
 {
-    $dbhost  = 'localhost';
-    $dbname  = 'perusat';
-    $dbuser  = 'root';
-    $dbpaswd = 'root';
+    $dbhost  = 'isabeliperusat.mysql.db';
+    $dbname  = 'isabeliperusat';
+    $dbuser  = 'isabeliperusat';
+    $dbpaswd = 'GRNCtkRp8ddJ';
     try{
         $db = new PDO('mysql:host='.$dbhost.';dbname='.$dbname,$dbuser,$dbpaswd,array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
     }catch(PDOexception $e){

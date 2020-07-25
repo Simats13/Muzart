@@ -1,15 +1,9 @@
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script>
-   function onSubmit(token) {
-     document.getElementById("demo-form").submit();
-   }
- </script>
 <?php
     if(isset($_SESSION['admin'])){
-        header("Location:index.php?page=dashboard");
+        header("Location:index.php?page=principal");
     }
 ?>
-
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <div class="row">
     <div class="col l4 m6 s12 offset-l4 offset-m3">
         <div class="card-panel">
@@ -22,16 +16,30 @@
             <h4 class="center-align">Se connecter</h4>
 
             <?php
+                require('../../admin/recaptcha/autoload.php');
+            
                 if(isset($_POST['submit'])){
-                    $email = htmlspecialchars(trim($_POST['email']));
-                    $password = htmlspecialchars(trim($_POST['password']));
+                    if(isset($_POST['g-recaptcha-response'])){
+                        $recaptcha = new \ReCaptcha\ReCaptcha('6LenjrMZAAAAAGFZYBgEfAgmxb_omKnz5YyOGwLe');
+                        $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
 
-                    $errors = [];
 
-                    if(empty($email) || empty($password)){
-                        $errors['empty'] = "Tous les champs n'ont pas été remplis!";
-                    }else if(is_admin($email,$password) == 0){
-                        $errors['exist']  = "Cet administrateur n'existe pas";
+                        $email = htmlspecialchars(trim($_POST['email']));
+                        $password = htmlspecialchars(trim($_POST['password']));
+
+                        $errors = [];
+
+                        if(empty($email) || empty($password)){
+                            $errors['empty'] = "Tous les champs n'ont pas été remplis !";
+                        }else if(is_admin($email,$password) == 0){
+                            $errors['exist']  = "Cet administrateur n'existe pas";
+                        }
+                        if($resp->getErrorCodes()){
+                            $errors['emptyCaptcha']  = "Le captcha n'est pas rempli !";
+                        }
+                    
+                        
+                  
                     }
 
                     if(!empty($errors)){
@@ -48,7 +56,7 @@
                         <?php
                     }else{
                         $_SESSION['admin'] = $email;
-                        header("Location:index.php?page=dashboard");
+                        header("Location:../admin/index.php?page=principal");
                     }
 
                 }
@@ -70,16 +78,16 @@
                 </div>
 
                 <center>
+                    <div class="g-recaptcha" data-sitekey="6LenjrMZAAAAAESM1lVBC89T5PK1qtYoB9P6ImQr" style="margin-bottom:1vw"></div>
                     <button type="submit" name="submit" class="waves-effect waves-light btn light-blue">
                         <i class="material-icons left">perm_identity</i>
                         Se connecter
                     </button>
                     <br/><br/>
                     <a href="index.php?page=new">Nouveau modérateur</a>
-                    <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit' data-action='submit'>Submit</button>
                 </center>
 
-               
+
 
 
             </form>
@@ -87,4 +95,3 @@
         </div>
     </div>
 </div>
-

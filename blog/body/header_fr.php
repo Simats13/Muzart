@@ -16,20 +16,17 @@
                     <div class="clearfix">
                         <ul class="list-inline social-links wow pull-left">
                             <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/isabelle-perusat-a38b2639"><i class="fa fa-linkedin"></i></a>
                             </li>
                         </ul>
 
                         <div class="pull-right text-right">
                             <ul class="list-inline">
                                 <li>
-                                    <div><i class="fa fa-envelope-o"></i> contact@iperusatcreation.com</div>
+                                    <div><i class="fa fa-envelope-o"></i> contact@isabelleperusat.com</div>
                                 </li>
                             </ul>
                         </div>
@@ -58,7 +55,7 @@
                         <li class="dropdown" role="menu">
                             <a href="../portfolio">Portfolio</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="../?page=photo">Étude Photographique</a></li>
+                                <li><a href="../?page=image">Étude Photographique</a></li>
                                 <li><a href="../?page=video">Art Vidéos</a></li>
                             </ul>
                         </li>
